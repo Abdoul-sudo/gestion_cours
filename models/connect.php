@@ -1,5 +1,5 @@
 <?php
-    class DB_CONNECTION{
+    class DB_CONNECT{
         public function dbConnect(){
             // Les configurations de la base de donnée
 

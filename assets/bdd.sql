@@ -116,3 +116,16 @@ CREATE TABLE apprendre(
 	,CONSTRAINT apprendre_cours_FK FOREIGN KEY (id_cours) REFERENCES cours(id_cours)
 	,CONSTRAINT apprendre_etudiant0_FK FOREIGN KEY (id_etudiant) REFERENCES etudiant(id_etudiant)
 )ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: posséder
+#------------------------------------------------------------
+
+CREATE TABLE posseder(
+        id_specialite Int NOT NULL ,
+        id_prof       Int NOT NULL
+        ,CONSTRAINT posseder_PK PRIMARY KEY (id_specialite,id_prof)
+
+        ,CONSTRAINT posseder_specialite_FK FOREIGN KEY (id_specialite) REFERENCES specialite(id_specialite)
+        ,CONSTRAINT posseder_professeur0_FK FOREIGN KEY (id_prof) REFERENCES professeur(id_prof)
+)ENGINE=InnoDB;

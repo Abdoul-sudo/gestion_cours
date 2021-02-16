@@ -42,5 +42,7 @@
                 <input type="submit" value="OK">
             </div>
         </form>
+
+        <a href="listeEtudiant.php"> LISTE DES ETUDIANTS </a>
     </body>
 </html>

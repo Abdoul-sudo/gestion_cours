@@ -1,7 +1,6 @@
 <?php 
     require_once("connect.php");
 
-
     class  M_ETUDIANT extends DB_CONNECT
     {
         public function M_insertionEt($nom, $prenom, $tel, $email, $mdp, $img)
@@ -15,7 +14,7 @@
         {
             $bdd = $this -> dbConnect();
             $sql = $bdd -> prepare ("SELECT id_etudiant, nom_etudiant, prenom_etudiant, email_etudiant, tel_etudiant FROM etudiant");
-            $sql = execute (array());
+            $sql -> execute (array());
             $idEt = array();
             $nomEt = array();
             $prenomEt = array();

@@ -1,4 +1,4 @@
 <?php
-    $nom=$_POST['nom'];
+    $nom="saluuuuuuuuuuuuuuuuut";
     echo $nom;
 ?>

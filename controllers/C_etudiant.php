@@ -1,5 +1,5 @@
 <?php 
-    require('./models/etudiant.php');
+    require('../models/M_etudiant.php');
 
     function C_insertion()
     {
@@ -12,7 +12,7 @@
             $imgEt = $_POST['image_etudiant'];
 
             $etudiant = new ETUDIANT;
-            $ajoutEt = $etudiant -> insertion($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
+            $ajoutEt = $etudiant -> M_insertion($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
             header("location:../views/admin/listeEtudiant.php");
         }
         else {

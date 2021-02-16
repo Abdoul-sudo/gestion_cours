@@ -1,11 +1,10 @@
 <?php 
-    require_once('../models/M_etudiant.php');
+    require_once("../models/M_etudiant.php");
     class C_ETUDIANT
     {
 
         public function C_insertionEt()
-        {
-            
+        {            
             if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['tel']) && isset($_POST['img'])) {
                 $nomEt = $_POST['nom'];
                 $prenomEt = $_POST['prenom'];
@@ -39,5 +38,13 @@
         }
 
     }
-    
+?>
+
+
+<?php 
+    $action= $_GET["action"];
+    if ($action=="insert") {
+        $a= new C_ETUDIANT;
+        $i=$a->C_insertionEt();
+    }
 ?>

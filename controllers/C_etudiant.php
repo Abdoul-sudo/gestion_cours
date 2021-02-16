@@ -3,13 +3,13 @@
 
     function C_insertion()
     {
-        if (isset($_POST['nom_etudiant']) && isset($_POST['prenom_etudiant']) && isset($_POST['email_etudiant']) && isset($_POST['mdp_etudiant']) && isset($_POST['tel_etudiant']) && isset($_POST['image_etudiant'])) {
-            $nomEt = $_POST['nom_etudiant'];
-            $prenomEt = $_POST['prenom_etudiant'];
-            $emailEt = $_POST['email_etudiant'];
-            $mdpEt = $_POST['mdp_etudiant'];
-            $telEt = $_POST['tel_etudiant'];
-            $imgEt = $_POST['image_etudiant'];
+        if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['tel']) && isset($_POST['image'])) {
+            $nomEt = $_POST['nom'];
+            $prenomEt = $_POST['prenom'];
+            $emailEt = $_POST['email'];
+            $mdpEt = $_POST['mdp'];
+            $telEt = $_POST['tel'];
+            $imgEt = $_POST['image'];
 
             $etudiant = new ETUDIANT;
             $ajoutEt = $etudiant -> M_insertion($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);

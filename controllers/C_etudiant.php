@@ -1,7 +1,7 @@
 <?php 
-    require('../models/etudiant.php');
+    require('./models/etudiant.php');
 
-    public function C_insertion()
+    function C_insertion()
     {
         if (isset($_POST['nom_etudiant']) && isset($_POST['prenom_etudiant']) && isset($_POST['email_etudiant']) && isset($_POST['mdp_etudiant']) && isset($_POST['tel_etudiant']) && isset($_POST['image_etudiant'])) {
             $nomEt = $_POST['nom_etudiant'];
@@ -13,10 +13,11 @@
 
             $etudiant = new ETUDIANT;
             $ajoutEt = $etudiant -> insertion($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-            header("location:../views/listeEtudiant.php");
+            header("location:../views/admin/listeEtudiant.php");
         }
         else {
-            header("location:../views/echec.php");
+            header("location:../views/admin/echec.php");
         }
     }
+    C_insertion();
 ?>

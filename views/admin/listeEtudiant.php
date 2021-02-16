@@ -1,4 +1,4 @@
 <?php
-    $nom="saluuuuuuuuuuuuuuuuut";
+    $nom="etudiant inséré correctement!!!!!!!!!";
     echo $nom;
 ?>

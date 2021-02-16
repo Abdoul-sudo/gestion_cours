@@ -1,1 +1,5 @@
-<?php require_once('views/admin/formulaireEtudiant.php');?>
+<?php 
+    require_once('views/admin/formulaireEtudiant.php');
+    
+
+?>

@@ -17,7 +17,11 @@
         </tr>
 
         <tr>
-            <?php ?>
+            <?php 
+                require('../../controllers/C_etudiant.php');
+                $et = new C_ETUDIANT;
+                $list = $et -> C_listeEt();  
+            ?>
         </tr>
     </table>
 </body>

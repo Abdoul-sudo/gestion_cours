@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <form method="post" action="controllers/C_etudiant.php">
+        <form method="post" action="insEtudiant.php">
             <div>
                 <h4 for="nom">NOM</h4>
                 <input type="text" name="nom" id="nom">

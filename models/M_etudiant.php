@@ -14,19 +14,23 @@
         {
             $bdd = $this -> dbConnect();
             $sql = $bdd -> prepare ("SELECT id_etudiant, nom_etudiant, prenom_etudiant, email_etudiant, tel_etudiant FROM etudiant");
-            $sql -> execute (array());
-            $idEt = array();
-            $nomEt = array();
-            $prenomEt = array();
-            $emailEt = array();
-            $telEt = array();
-            while ($tab = $sql -> fetch()) {
-                $idEt[] = $tab["id_etudiant"];
-                $nomEt[] = $tab["nom_etudiant"];
-                $prenomEt[] = $tab["prenom_etudiant"];
-                $emailEt[] = $tab["email_etudiant"];
-                $telEt[] = $tab["tel_etudiant"];
-            }
+            
+            $sql -> execute(); 
+            $tab = $sql -> fetchall();
+            return $tab;
+            //$sql -> execute (array());
+            // $idEt = array();
+            // $nomEt = array();
+            // $prenomEt = array();
+            // $emailEt = array();
+            // $telEt = array();
+            // while ($tab = $sql -> fetch()) {
+            //     $idEt[] = $tab["id_etudiant"];
+            //     $nomEt[] = $tab["nom_etudiant"];
+            //     $prenomEt[] = $tab["prenom_etudiant"];
+            //     $emailEt[] = $tab["email_etudiant"];
+            //     $telEt[] = $tab["tel_etudiant"];
+            // }
         }
     }
     

@@ -1,9 +1,11 @@
-<?php 
-    require("models/M_etudiant.php");
+<?php
+
     class C_ETUDIANT
     {
         public function C_insertionEt()
-        {            
+        {
+            require_once("../models/M_etudiant.php");
+
             if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['tel']) && isset($_POST['img'])) {
                 $nomEt = $_POST['nom'];
                 $prenomEt = $_POST['prenom'];
@@ -14,25 +16,40 @@
 
                 $etudiant = new M_ETUDIANT;
                 $ajoutEt = $etudiant -> M_insertionEt($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                header("location:../index.php?pg=insertion");
+                header("location:../index.php");
             }
             else {
-                header("location:../index.php?pg=echec");
+                header("location:../views/admin/listeEtudiant.php");
             }
         }
 
         public function C_listeEt()
         {
+            require_once("models/M_etudiant.php");
+
             $etudiant = new M_ETUDIANT;
             $listeEt = $etudiant -> M_listeEt();
-            
-            for ($i=0; $i < $tab ; $i++) { 
-                echo "<td>".$idEt[$i]."</td>";
-                echo "<td>".$nomEt[$i]."</td>";
-                echo "<td>".$prenomEt[$i]."</td>";
-                echo "<td>".$emailEt[$i]."</td>";
-                echo "<td>".$telEt[$i]."</td>";
+
+            foreach ($listeEt as $val) {
+                echo "<tr>";
+                echo "<td>".$val['id_etudiant']."</td>";
+                echo "<td>".$val['nom_etudiant']."</td>";
+                echo "<td>".$val['prenom_etudiant']."</td>";
+                echo "<td>".$val['email_etudiant']."</td>";
+                echo "<td>".$val['tel_etudiant']."</td>";
+                echo"</tr>";
+                
             }
+        }
+    }
+
+
+    if (!empty($_GET["action"])) {
+        $action= $_GET["action"];
+
+        if ($action=="insert") {
+        $a= new C_ETUDIANT;
+        $i=$a->C_insertionEt();
         }
     }
 ?>

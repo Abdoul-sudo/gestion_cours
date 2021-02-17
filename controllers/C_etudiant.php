@@ -1,5 +1,5 @@
 <?php 
-    require("../models/M_etudiant.php");
+    require("models/M_etudiant.php");
     class C_ETUDIANT
     {
         public function C_insertionEt()
@@ -14,16 +14,15 @@
 
                 $etudiant = new M_ETUDIANT;
                 $ajoutEt = $etudiant -> M_insertionEt($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                header("location:../index.php");
+                header("location:../index.php?pg=insertion");
             }
             else {
-                header("location:../views/admin/echec.php");
+                header("location:../index.php?pg=echec");
             }
         }
 
         public function C_listeEt()
         {
-
             $etudiant = new M_ETUDIANT;
             $listeEt = $etudiant -> M_listeEt();
             
@@ -35,14 +34,5 @@
                 echo "<td>".$telEt[$i]."</td>";
             }
         }
-    }
-?>
-
-<?php 
-    // si l'action dans le formulaire est=="insert" , on insère dans la base de données
-    $action= $_GET["action"];
-    if ($action=="insert") {
-        $a= new C_ETUDIANT;
-        $i=$a->C_insertionEt();
     }
 ?>

@@ -1,6 +1,6 @@
 <?php 
     require_once("connect.php");
-
+    require('../models/M_etudiant.php');
 
     class  M_ETUDIANT extends DB_CONNECT
     {

@@ -1,5 +1,5 @@
 <?php 
-    require('../models/M_etudiant.php');
+    //require('../models/M_etudiant.php');
     class C_ETUDIANT
     {
         

@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <form method="post" action="../../controllers/C_etudiant.php?action=insert">
+        <form method="post" action="./controllers/C_etudiant.php?action=insert">
             <div>
                 <h4 for="nom">NOM</h4>
                 <input type="text" name="nom" id="nom">
@@ -35,7 +35,7 @@
 
             <div>
                 <h4 for="img">INSERER IMAGE</h4>
-                <input type="file" name="img" id="img">
+                <input type="file" accept="image/png, image/jpeg" name="img" id="img">
             </div>
 
             <div>

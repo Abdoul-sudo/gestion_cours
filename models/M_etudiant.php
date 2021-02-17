@@ -1,6 +1,7 @@
 <?php 
     require_once("connect.php");
 
+
     class  M_ETUDIANT extends DB_CONNECT
     {
         public function M_insertionEt($nom, $prenom, $tel, $email, $mdp, $img)

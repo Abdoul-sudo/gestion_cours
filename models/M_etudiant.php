@@ -14,7 +14,7 @@
         public function M_listeEt()
         {
             $bdd = $this -> dbConnect();
-            $sql = $bdd -> prepare ("SELECT id_etudiant, nom_etudiant, prenom_etudiant, email_etudiant, tel_etudiant FROM etudiant");
+            $sql = $bdd -> prepare ("SELECT id_etudiant, nom_etudiant, prenom_etudiant, email_etudiant, tel_etudiant, image_etudiant FROM etudiant");
             
             $sql -> execute(); 
             $tab = $sql -> fetchall();

@@ -37,6 +37,9 @@
                 echo "<td>".$val['prenom_etudiant']."</td>";
                 echo "<td>".$val['email_etudiant']."</td>";
                 echo "<td>".$val['tel_etudiant']."</td>";
+                echo "<td>".'<img src="assets/images/etudiant/'. $val['image_etudiant'] .'" height=100 width=100 >'."</td>";
+                //echo '<img src="image/' . $data["image"] . '">';
+
                 echo"</tr>";
                 
             }

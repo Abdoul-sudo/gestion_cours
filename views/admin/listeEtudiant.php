@@ -14,6 +14,7 @@
             <th>PRENOM</th>
             <th>EMAIL</th>
             <th>TELEPHONE</th>
+            <th>IMAGE</th>
         </tr>
 
         <tr>

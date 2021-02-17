@@ -18,7 +18,8 @@
 
         <tr>
             <?php 
-                require('../../controllers/C_etudiant.php');
+                require_once("../../models/M_etudiant.php");
+                require("../../controllers/C_etudiant.php");
                 $et = new C_ETUDIANT;
                 $list = $et -> C_listeEt();  
             ?>

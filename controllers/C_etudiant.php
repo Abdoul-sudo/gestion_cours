@@ -1,10 +1,10 @@
 <?php 
-    //require('../models/M_etudiant.php');
+    require("../models/M_etudiant.php");
+
     class C_ETUDIANT
     {
-        
         public function C_insertionEt()
-        {
+        {            
             if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['tel']) && isset($_POST['img'])) {
                 $nomEt = $_POST['nom'];
                 $prenomEt = $_POST['prenom'];
@@ -15,7 +15,7 @@
 
                 $etudiant = new M_ETUDIANT;
                 $ajoutEt = $etudiant -> M_insertionEt($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                header("location:../views/admin/formulaireEtudiant.php");
+                header("location:../index.php");
             }
             else {
                 header("location:../views/admin/echec.php");
@@ -24,9 +24,10 @@
 
         public function C_listeEt()
         {
+
             $etudiant = new M_ETUDIANT;
             $listeEt = $etudiant -> M_listeEt();
-
+            
             for ($i=0; $i < $tab ; $i++) { 
                 echo "<td>".$idEt[$i]."</td>";
                 echo "<td>".$nomEt[$i]."</td>";
@@ -35,7 +36,14 @@
                 echo "<td>".$telEt[$i]."</td>";
             }
         }
-
     }
-    
+?>
+
+<?php 
+    // si l'action dans le formulaire est=="insert" , on insère dans la base de données
+    $action= $_GET["action"];
+    if ($action=="insert") {
+        $a= new C_ETUDIANT;
+        $i=$a->C_insertionEt();
+    }
 ?>

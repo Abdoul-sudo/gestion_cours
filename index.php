@@ -5,4 +5,3 @@
 	}else{
 		include('views/public/login.php');
 }
-?>

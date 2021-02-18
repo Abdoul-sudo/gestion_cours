@@ -7,7 +7,7 @@
     </head>
 
     <body>
-    
+
         <form method="post" action="controllers/C_etudiant?action=insert">
             <div>
                 <h4 for="nom">NOM</h4>
@@ -44,6 +44,6 @@
             </div>
         </form>
 
-        <a href="index.php?pg=listeEt"> LISTE DES ETUDIANTS </a>
+        <a href="admin.php?pgAdmin=pgEt&pg=listeEt"> LISTE DES ETUDIANTS </a>
     </body>
 </html>

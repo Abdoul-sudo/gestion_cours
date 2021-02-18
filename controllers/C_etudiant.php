@@ -16,10 +16,10 @@
 
                 $etudiant = new M_ETUDIANT;
                 $ajoutEt = $etudiant -> M_insertionEt($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                header("location:../admin.php");
+                header("location:../admin.php?session=admin&pgAdmin=pgEt");
             }
             else {
-                header("location:../views/admin/listeEtudiant.php");
+                header("location:../admin.php?session=admin&erreur=err");
             }
         }
 

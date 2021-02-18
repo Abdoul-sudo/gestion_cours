@@ -19,7 +19,7 @@
 			//à remplacer par une redirection vers la section spécial administrateur
 			//mais un admin peut être étudiant aussi bien que professeur
 			########echo "<p> Vous êtes un administrateur</p>";
-			header('Location: ../admin.php');
+			echo '<a href="../admin.php?session=admin">Page d\'insertion</a>';
 		}
 	}
 	else{

@@ -23,7 +23,4 @@
                 print "[ERREUR] Connexion échouée :" . $error->getMessage();
                 die();
             }
-        }
-    }
 ?>
-

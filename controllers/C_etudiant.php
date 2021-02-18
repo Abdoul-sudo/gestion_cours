@@ -16,7 +16,7 @@
 
                 $etudiant = new M_ETUDIANT;
                 $ajoutEt = $etudiant -> M_insertionEt($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                header("location:../index.php");
+                header("location:../admin.php");
             }
             else {
                 header("location:../views/admin/listeEtudiant.php");

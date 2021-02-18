@@ -19,19 +19,6 @@
             $sql -> execute(); 
             $tab = $sql -> fetchall();
             return $tab;
-            //$sql -> execute (array());
-            // $idEt = array();
-            // $nomEt = array();
-            // $prenomEt = array();
-            // $emailEt = array();
-            // $telEt = array();
-            // while ($tab = $sql -> fetch()) {
-            //     $idEt[] = $tab["id_etudiant"];
-            //     $nomEt[] = $tab["nom_etudiant"];
-            //     $prenomEt[] = $tab["prenom_etudiant"];
-            //     $emailEt[] = $tab["email_etudiant"];
-            //     $telEt[] = $tab["tel_etudiant"];
-            // }
         }
     }
     

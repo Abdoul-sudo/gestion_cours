@@ -6,15 +6,14 @@
 
 		if($email !== "" && $password !== "")
 		{
-			require('/models/connect.php');
+			require('../models/connect.php');
 			$db = dbConnect();
 			$req = $db->prepare("SELECT * FROM etudiant 
 								WHERE email_etudiant = ?
 								LIMIT 1");
 			$req->execute(array($email));
-			$tab = $req->fetchAll();
-// La BDD devrait être revue, sinon, il faudra refaire ces même maneuvre pour les admins et les profs
-			if(count($tab)>0 && password_verify($password, $tab[0][mdp_etudiant])){
+			$tab = $req->fetch();
+			if(count($tab)>0 && password_verify($password, $tab[0]["mdp_etudiant"])){
 				$_SESSION["prenom"] = ucwords(strtolower($tab[0]["prenom_etudiant"]));
 				$_SESSION["nom"] = strtoupper($tab[0]["nom_etudiant"]);
 				$_SESSION["email"] = $tab[0]["email_etudiant"];
@@ -25,10 +24,10 @@
 			}else{
 				header('Location: /index.php?erreur=1'); // utilisateur ou mot de passe incorrect
 			}
-		}else{
-			header('Location: /index.php?erreur=2'); // utilisateur ou mot de passe vide
-		}
-	}else{
-		header('Location: /index.php');
-	}
-?>
+ 		}else{
+ 			header('Location: /index.php?erreur=2'); // utilisateur ou mot de passe vide
+ 		}
+ 	}else{
+ 		header('Location: /index.php');
+ }
+// ?>

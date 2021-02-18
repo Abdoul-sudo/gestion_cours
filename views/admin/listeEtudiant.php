@@ -6,6 +6,8 @@
     <title>ListeEtudiants</title>
 </head>
 <body>
+    <a href="controllers/logout.php">Deconnexion</a>
+
     <h1>LISTE DES ETUDIANTS</h1>
     <table>
         <tr>

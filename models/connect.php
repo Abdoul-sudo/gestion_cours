@@ -12,15 +12,15 @@
             $DB_USER = $this -> DB_USER;
             $DB_PASS = $this -> DB_PASS;
 
-            if (!isset($DB_HOST)) {
-                
-            } 
             try{
                 $db = new PDO("mysql:host=" . $DB_HOST . ";dbname=" . $DB_NAME, $DB_USER, $DB_PASS);
                 // Si connection non établie
                 return $db ;
+                
             } catch(PDOException $error){
                 print "[ERREUR] Connexion échouée :" . $error->getMessage();
                 die();
             }
+        }
+    }
 ?>

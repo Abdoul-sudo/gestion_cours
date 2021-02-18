@@ -7,6 +7,7 @@
     </head>
 
     <body>
+    
         <form method="post" action="controllers/C_etudiant?action=insert">
             <div>
                 <h4 for="nom">NOM</h4>

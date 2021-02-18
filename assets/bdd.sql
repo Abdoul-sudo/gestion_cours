@@ -14,7 +14,8 @@ CREATE TABLE etudiant(
         email_etudiant  Varchar (100) NOT NULL ,
         mdp_etudiant    Varchar (500) NOT NULL ,
         tel_etudiant    Double  NOT NULL ,
-        image_etudiant  Varchar (500) NOT NULL
+        image_etudiant  Varchar (500) NOT NULL,
+        admin           BOOLEAN DEFAULT 0
 	,CONSTRAINT etudiant_PK PRIMARY KEY (id_etudiant)
 )ENGINE=InnoDB;
 
@@ -35,14 +36,15 @@ CREATE TABLE categorie(
 #------------------------------------------------------------
 
 CREATE TABLE professeur(
-        id_prof     Int  Auto_increment  NOT NULL ,
-        nom_prof    Varchar (100) NOT NULL ,
-        prenom_prof Varchar (100),
-        email_prof  Varchar (100) NOT NULL ,
-        mdp_prof    Varchar (500) NOT NULL ,
-        tel_prof    Double NOT NULL ,
-        image_prof  Varchar (500) NOT NULL
-	,CONSTRAINT professeur_PK PRIMARY KEY (id_prof)
+        id_professeur     Int  Auto_increment  NOT NULL ,
+        nom_professeur    Varchar (100) NOT NULL ,
+        prenom_professeur Varchar (100),
+        email_professeur  Varchar (100) NOT NULL ,
+        mdp_professeur    Varchar (500) NOT NULL ,
+        tel_professeur    Double NOT NULL ,
+        image_professeur  Varchar (500) NOT NULL,
+        admin             BOOLEAN DEFAULT 0
+	,CONSTRAINT professeur_PK PRIMARY KEY (id_professeur)
 )ENGINE=InnoDB;
 
 
@@ -54,11 +56,11 @@ CREATE TABLE cours(
         id_cours  Int  Auto_increment  NOT NULL ,
         nom_cours Varchar (50) NOT NULL ,
         id_cat    Int NOT NULL ,
-        id_prof   Int NOT NULL
+        id_professeur   Int NOT NULL
 	,CONSTRAINT cours_PK PRIMARY KEY (id_cours)
 
 	,CONSTRAINT cours_categorie_FK FOREIGN KEY (id_cat) REFERENCES categorie(id_cat)
-	,CONSTRAINT cours_professeur0_FK FOREIGN KEY (id_prof) REFERENCES professeur(id_prof)
+	,CONSTRAINT cours_professeur0_FK FOREIGN KEY (id_professeur) REFERENCES professeur(id_professeur)
 )ENGINE=InnoDB;
 
 
@@ -70,11 +72,11 @@ CREATE TABLE message(
         id_mess      Int  Auto_increment  NOT NULL ,
         date_mess    Datetime NOT NULL ,
         contenu_mess Text NOT NULL ,
-        id_prof      Int NOT NULL ,
+        id_professeur      Int NOT NULL ,
         id_etudiant  Int NOT NULL
 	,CONSTRAINT message_PK PRIMARY KEY (id_mess)
 
-	,CONSTRAINT message_professeur_FK FOREIGN KEY (id_prof) REFERENCES professeur(id_prof)
+	,CONSTRAINT message_professeur_FK FOREIGN KEY (id_professeur) REFERENCES professeur(id_professeur)
 	,CONSTRAINT message_etudiant0_FK FOREIGN KEY (id_etudiant) REFERENCES etudiant(id_etudiant)
 )ENGINE=InnoDB;
 
@@ -123,9 +125,9 @@ CREATE TABLE apprendre(
 
 CREATE TABLE posseder(
         id_specialite Int NOT NULL ,
-        id_prof       Int NOT NULL
-        ,CONSTRAINT posseder_PK PRIMARY KEY (id_specialite,id_prof)
+        id_professeur       Int NOT NULL
+        ,CONSTRAINT posseder_PK PRIMARY KEY (id_specialite,id_professeur)
 
         ,CONSTRAINT posseder_specialite_FK FOREIGN KEY (id_specialite) REFERENCES specialite(id_specialite)
-        ,CONSTRAINT posseder_professeur0_FK FOREIGN KEY (id_prof) REFERENCES professeur(id_prof)
+        ,CONSTRAINT posseder_professeur0_FK FOREIGN KEY (id_professeur) REFERENCES professeur(id_professeur)
 )ENGINE=InnoDB;

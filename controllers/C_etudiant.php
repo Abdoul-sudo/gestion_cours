@@ -16,7 +16,7 @@
 
                 $etudiant = new M_ETUDIANT;
                 $ajoutEt = $etudiant -> M_insertionEt($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                header("location:../admin.php?session=admin&pgAdmin=pgEt");
+                header("location:../admin.php?session=admin");
             }
             else {
                 header("location:../admin.php?session=admin&erreur=err");

@@ -1,7 +1,7 @@
 <?php
 	require_once('connect.php');
 
-	class M_USER extends DB_CONNECT 
+	class M_User extends Database 
 	{
 
 		public function getUser($status, $email)
@@ -23,6 +23,4 @@
 		}
 
 	}
-
 	
-?>

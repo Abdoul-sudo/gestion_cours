@@ -1,7 +1,9 @@
 <?php
 	session_start();
 
+
 	if(isset($_SESSION['nom']) && $_SESSION['nom']!= ""){ //si on est bien connecté
+
 		if($_SESSION['status'] == 'etudiant'){ 
 			header("Location:../views/public/etudiant.php");
 		}

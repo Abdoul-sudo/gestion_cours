@@ -4,7 +4,7 @@
 		if($_SESSION['status'] == 'etudiant'){ 
 		//à remplacer par une redirection vers la section spécial étudiant
 			echo 'Bienvenue étudiant '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';
-			echo '<a href="logout.php">Deconnexion</a>';
+			echo '<a href="/controllers/logout.php">Deconnexion</a>';
 		}
 		elseif($_SESSION['status'] == 'professeur'){
 		//à remplacer par une redirection vers la section spécial professeur

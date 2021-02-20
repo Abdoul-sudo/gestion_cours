@@ -97,11 +97,6 @@
         }
     }
 
-    // if (!empty($_GET["modif"])) 
-    // {
-    //     $id=$_GET["modif"];
-        
-    // }
     if (!empty($_GET["update"])) 
     {
         $upd=$_GET["update"];

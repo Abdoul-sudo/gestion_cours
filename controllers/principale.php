@@ -8,7 +8,7 @@
 			header("Location:../views/public/etudiant.php");
 		}
 		elseif($_SESSION['status'] == 'professeur'){
-			header("Location:../views/public/etudiant.php");
+			header("Location:../views/public/professeur.php");
 
 		}
 		

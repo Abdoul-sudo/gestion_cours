@@ -2,8 +2,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']=true){
-		header('Location: controllers/principale.php');
+		header('Location: '.$_SERVER['DOCUMENT_ROOT'].'/controllers/principale.php');
 	}else{
-		include('views/public/login.php');
-        echo '<a href="admin.php?session=admin">Page d\'insertion</a>'; // pour teste le chemin vers listeEtudiant
+		include ($_SERVER['DOCUMENT_ROOT'].'/views/public/login.php');
     }

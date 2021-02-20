@@ -39,8 +39,4 @@
             return $tab;
         }
     }
-<<<<<<< HEAD
 ?>
-=======
-    
->>>>>>> 094b2dbd4849f4f5dd66d0ff7a107e6ba23a4b19

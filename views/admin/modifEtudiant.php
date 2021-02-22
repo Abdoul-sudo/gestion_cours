@@ -15,22 +15,22 @@
 
             <div>
                 <h4 for="nom">NOM</h4>
-                <input type="text" name="nom" id="nom" placeholder="<?php echo $nom;?>">
+                <input type="text" name="nom" id="nom" value="<?php echo $nom;?>">
             </div>
 
             <div>
                 <h4 for="prenom">PRENOM</h4>
-                <input type="text" name="prenom" id="prenom" placeholder="<?php echo $prenom;?>">
+                <input type="text" name="prenom" id="prenom" value="<?php echo $prenom;?>">
             </div>
 
             <div>
                 <h4 for="tel">NUMERO DE TELEPHONE</h4>
-                <input type="text" name="tel" id="tel" placeholder="<?php echo $tel;?>">
+                <input type="text" name="tel" id="tel" value="<?php echo $tel;?>">
             </div>
 
             <div>
                 <h4 for="email">EMAIL</h4>
-                <input type="email" name="email" id=email placeholder="<?php echo $email;?>">
+                <input type="email" name="email" id=email value="<?php echo $email;?>">
             </div>
 
             <div>

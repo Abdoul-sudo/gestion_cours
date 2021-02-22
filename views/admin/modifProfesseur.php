@@ -7,38 +7,35 @@
     </head>
 
     <body>
-        <nav>  
-            <span><a href="admin.php?session=admin"> Accueil</a></span>  
-            <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
-            <span><a href="admin.php?pgAdmin=pgEt&pg=listeEt"> Liste des étudiants </a></span>
-            <span><a href="controllers/logout.php">Deconnexion</a></span>
-        </nav>
-        
-        <h1> INSERTION ETUDIANT </h1>
-        <form method="post" action="controllers/manageEtudiant?action=insert">
+        <h1> FORMULAIRE D'UPDATE DU PROFESSEUR: <?php echo $nom;?></h1>
+        <form method="post" action="controllers/ManageProfesseur.php?update=update">
+            <div>
+                <input type="hidden" name="id" id="id" value="<?php echo $id;?>">
+            </div>
+
             <div>
                 <h4 for="nom">NOM</h4>
-                <input type="text" name="nom" id="nom">
+                <input type="text" name="nom" id="nom" value="<?php echo $nom;?>">
             </div>
 
             <div>
                 <h4 for="prenom">PRENOM</h4>
-                <input type="text" name="prenom" id="prenom">
+                <input type="text" name="prenom" id="prenom" value="<?php echo $prenom;?>">
             </div>
 
             <div>
                 <h4 for="tel">NUMERO DE TELEPHONE</h4>
-                <input type="text" name="tel" id="tel">
+                <input type="text" name="tel" id="tel" value="<?php echo $tel;?>">
             </div>
 
             <div>
                 <h4 for="email">EMAIL</h4>
-                <input type="email" name="email" id=email>
+                <input type="email" name="email" id=email value="<?php echo $email;?>">
             </div>
 
             <div>
                 <h4 for="mdp">MOT DE PASSE</h4>
-                <input type="password" name="mdp" id="mdp">
+                <input type="password" name="mdp" id="mdp" >
             </div>
 
             <div>
@@ -50,7 +47,5 @@
                 <input type="submit" value="OK">
             </div>
         </form>
-
-        
     </body>
 </html>

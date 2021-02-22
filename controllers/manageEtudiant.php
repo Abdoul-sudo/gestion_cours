@@ -1,10 +1,10 @@
 <?php
 
-    class C_ETUDIANT
+    class ManageEtudiant
     {
-        public function C_insertionEt()
+        public function insertEtudiant()
         {
-            require_once("../models/M_etudiant.php");
+            require_once("../models/user.php");
 
             if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['tel']) && isset($_POST['img'])) {
                 $nomEt = $_POST['nom'];
@@ -14,21 +14,22 @@
                 $telEt = $_POST['tel'];
                 $imgEt = $_POST['img'];
 
-                $etudiant = new M_ETUDIANT;
-                $ajoutEt = $etudiant -> M_insertionEt($nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                header("location:../admin.php?session=admin");
+                $etudiant = new User;
+                $ajoutEt = $etudiant -> insertUser('etudiant', $nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
+                //header("location:../admin.php?session=admin");
+                header("Location:../admin.php?pgAdmin=pgEt&pg=listeEt");
             }
             else {
-                header("location:../admin.php?session=admin&erreur=err");
+                header("location:../admin.php?pgAdmin=pgEt&erreur=err");
             }
         }
 
-        public function C_listeEt() //appelée dans listeEtudiant.php
+        public function listEtudiant() //appelée dans listeEtudiant.php
         {
-            require_once("models/M_etudiant.php"); //considéré comme dans admin.php car listeEtudiant.php est appelée dans admin.php
+            require_once("models/user.php"); //considéré comme dans admin.php car listeEtudiant.php est appelée dans admin.php
 
-            $etudiant = new M_ETUDIANT;
-            $listeEt = $etudiant -> M_listeEt();
+            $etudiant = new User;
+            $listeEt = $etudiant -> listUser('etudiant');
             foreach ($listeEt as $val) 
             {
                 echo "<tr>";
@@ -47,26 +48,26 @@
             }
         }
 
-        public function C_takeEt($id) // sert à SELECT la ligne qu'on veut modifier  // appelée dans admin.php
+        public function takeEtudiant($id) // sert à SELECT la ligne qu'on veut modifier  // appelée dans admin.php
         {
-            require_once("models/M_etudiant.php");
-            $et = new M_ETUDIANT;
-            $modif = $et -> takeEt($id);
+            require_once("models/user.php");
+            $et = new User;
+            $modif = $et -> takeUser('etudiant', $id);
             foreach ($modif as $val) 
             {
                 $id = $val['id_etudiant'];
-                $nom=$val['nom_etudiant'];
-                $prenom=$val['prenom_etudiant'];
-                $email=$val['email_etudiant'];
-                $tel=$val['tel_etudiant'];
+                $nom = $val['nom_etudiant'];
+                $prenom = $val['prenom_etudiant'];
+                $email = $val['email_etudiant'];
+                $tel = $val['tel_etudiant'];
             }
             // appelle le formulaire update pour placer les placeholder
             require_once("views/admin/modifEtudiant.php");
         }
 
-        public function C_modifEt()
+        public function updateEtudiant()
         {
-            require_once("../models/M_etudiant.php");
+            require_once("../models/user.php");
             
             if (isset($_POST['id']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['tel']) && isset($_POST['img'])) {
                 $id = $_POST['id'];
@@ -77,12 +78,12 @@
                 $telEt = $_POST['tel'];
                 $imgEt = $_POST['img'];
 
-                $etudiant = new M_ETUDIANT;
-                $modEt = $etudiant -> M_modifEt($id, $nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
+                $etudiant = new User;
+                $modEt = $etudiant -> updateUser('etudiant', $id, $nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
                 header("location:../admin.php?pgAdmin=pgEt&pg=listeEt");
             }
             else {
-                header("location:../admin.php?session=admin&erreur=err2");
+                header("location:../admin.php?pgAdmin=pgEt&erreur=err2");
             }
         }
     }
@@ -91,9 +92,9 @@
     if (!empty($_GET["action"])) {
         $action= $_GET["action"];
 
-        if ($action=="insert") {
-            $a= new C_ETUDIANT;
-            $i=$a->C_insertionEt();
+        if ($action == "insert") {
+            $a= new ManageEtudiant;
+            $i=$a->insertEtudiant();
         }
     }
 
@@ -102,8 +103,8 @@
         $upd=$_GET["update"];
         if ($upd=="update") 
         {
-            $smth= new C_ETUDIANT;
-            $mod= $smth -> C_modifEt();
+            $smth= new ManageEtudiant;
+            $mod= $smth -> updateEtudiant();
         }
     }
     

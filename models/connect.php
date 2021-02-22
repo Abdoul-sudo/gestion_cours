@@ -16,18 +16,4 @@
                 die();
             }
         }
-        // public function dbHost(){
-        //     return $this->_dbHost;
-        // }
-        // public function dbUser(){
-        //     return $this->_dbUser;
-        // }
-        // public function dbPassword()
-        // {
-        //     return $this->_dbPassword;
-        // }
-        // public function dbName(){
-        //     return $this->_dbName;
-        // }
-
     }

@@ -7,8 +7,8 @@
     </head>
 
     <body>
-        <h1> FORMULAIRE UPDATE</h1>
-        <form method="post" action="controllers/C_etudiant.php?update=update">
+        <h1> FORMULAIRE D'UPDATE DE L'ETUDIANT: <?php echo $nom;?></h1>
+        <form method="post" action="controllers/ManageEtudiant.php?update=update">
             <div>
                 <input type="hidden" name="id" id="id" value="<?php echo $id;?>">
             </div>

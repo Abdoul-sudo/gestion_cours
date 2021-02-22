@@ -7,15 +7,15 @@
     </head>
 
     <body>
-        <nav>  
-            <span><a href="admin.php?session=admin"> Accueil</a></span>  
-            <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
-            <span><a href="admin.php?pgAdmin=pgEt&pg=listeEt"> Liste des étudiants </a></span>
+        <nav>    
+            <span><a href="admin.php?session=admin"> Accueil</a></span>
+            <span><a href="admin.php?pgAdmin=pgEt">Insertion Etudiant</a></span>
+            <span><<a href="admin.php?pgAdmin=pgProf&pg=listeProf"> Liste des professeurs </a></span>
             <span><a href="controllers/logout.php">Deconnexion</a></span>
         </nav>
         
-        <h1> INSERTION ETUDIANT </h1>
-        <form method="post" action="controllers/manageEtudiant?action=insert">
+        <h1> INSERTION PROFESSEUR </h1>
+        <form method="post" action="controllers/manageProfesseur?action=insert">
             <div>
                 <h4 for="nom">NOM</h4>
                 <input type="text" name="nom" id="nom">

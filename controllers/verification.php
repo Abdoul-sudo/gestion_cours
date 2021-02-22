@@ -8,8 +8,8 @@
 		if($email !== "" && $password !== ""){
 			$status = 'etudiant';
 			require('function.php');
-			require('../models/getUser.php');
-			$user = new M_USER;
+			require('../models/user.php');
+			$user = new User;
 
 			$req = $user -> getUser($status, $email);
 			$tab = $req->fetch();

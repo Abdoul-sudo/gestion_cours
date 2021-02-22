@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ListeEtudiants</title>
+    <title>ListeProfesseurs</title>
 </head>
 <body>
-    <nav>  
-        <span><a href="admin.php?session=admin"> Accueil</a></span>  
+    <nav>    
+        <span><a href="admin.php?session=admin"> Accueil</a></span>
         <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
         <span><a href="admin.php?pgAdmin=pgEt">Insertion Etudiant</a></span>
         <span><a href="controllers/logout.php">Deconnexion</a></span>
     </nav>
 
-    <h1>LISTE DES ETUDIANTS</h1>
+    <h1>LISTE DES PROFESSEURS</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -26,9 +26,9 @@
 
 
         <?php 
-            require("controllers/ManageEtudiant.php");
-            $et = new ManageEtudiant;
-            $list = $et -> listEtudiant();  
+            require("controllers/ManageProfesseur.php");
+            $et = new ManageProfesseur;
+            $list = $et -> listProfesseur();  
         ?>
         
     </table>

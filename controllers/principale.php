@@ -11,7 +11,6 @@
 			header("Location:../views/public/professeur.php");
 
 		}
-		
 	}
 	else{
 		header('Location: /index.php');

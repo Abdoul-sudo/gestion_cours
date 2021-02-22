@@ -21,6 +21,5 @@
 			$req = $db->prepare($sql);	
 			$req->execute(array($act,));
 		}
-
 	}
 	

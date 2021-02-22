@@ -30,17 +30,38 @@
 
         <div>
         <h4>SPECIALITES</h4>
-        <select name="specialiteProf">
+        
 
         <h6>INFORMATIQUE</h6>
-        <input type="checkbox" name="informatique">
+        <input type="checkbox" name="informatique[]" value="Programmation">Programmation
+        <input type="checkbox" name="informatique[]" value="Maintenance">Maintenance
+        <input type="checkbox" name="informatique[]" value="Architecture">Architecture
+
 
         <h6>GESTION</h6>
-        <options></options>
-
+        <input type="checkbox" name="gestion[]" value="Compatabilité">Compatabilité
+        <input type="checkbox" name="gestion[]" value="Economie">Economie
+    
         <h6>COMMUNICATION</h6>
-        <options></options>
+        <input type="checkbox" name="communication[]" value="Leadership">Leadership
+        <input type="checkbox" name="communication[]" value="Français">Français
         </div>
+
+        <div>
+                <h4 for="mdp">MOT DE PASSE</h4>
+                <input type="password" name="mdpProf" id="mdpProf">
+            </div>
+
+            <div>
+                <h4 for="img">INSERER IMAGE</h4>
+                <input type="file" accept="image/png, image/jpeg" name="imgProf" id="imgProf">
+            </div>
+
+            <div>
+                <input type="submit" value="OK">
+            </div>
+
+            <a href="listeProf.php"> LISTE DES ETUDIANTS </a>
     </form>
 </body>
 </html>

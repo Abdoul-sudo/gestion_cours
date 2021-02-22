@@ -21,5 +21,7 @@
                 ?>
             </form>
         </div>
+        <a href="admin.php?session=admin">Page d\'insertion</a>
+
     </body>
 </html>

@@ -1,9 +1,9 @@
 <?php
     class Database{
         private $_dbHost = 'localhost';
-        private $_dbUser = 'fabien';
-        private $_dbPassword = 'Fabien512';
-        private $_dbName = 'gestion_cours';
+        private $_dbUser = 'root';
+        private $_dbPassword = '';
+        private $_dbName = 'bdd';
 
         protected function dbConnect(){
             try{

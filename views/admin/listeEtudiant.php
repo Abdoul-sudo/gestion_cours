@@ -6,7 +6,11 @@
     <title>ListeEtudiants</title>
 </head>
 <body>
-    <a href="controllers/logout.php">Deconnexion</a>
+    <nav>    
+        <a href="controllers/logout.php">Deconnexion</a>
+        <a href="admin.php?pgAdmin=pgEt">Insertion étudiant</a>
+        <a href="#"></a>
+    </nav>
 
     <h1>LISTE DES ETUDIANTS</h1>
     <table>
@@ -19,13 +23,13 @@
             <th>IMAGE</th>
         </tr>
 
-        <tr>
-            <?php 
-                require("controllers/C_etudiant.php");
-                $et = new C_ETUDIANT;
-                $list = $et -> C_listeEt();  
-            ?>
-        </tr>
+
+        <?php 
+            require("controllers/C_etudiant.php");
+            $et = new C_ETUDIANT;
+            $list = $et -> C_listeEt();  
+        ?>
+        
     </table>
 </body>
 </html>

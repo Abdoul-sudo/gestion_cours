@@ -39,7 +39,6 @@
                     echo "<td>".$val['email_etudiant']."</td>";
                     echo "<td>".$val['tel_etudiant']."</td>";
                     echo "<td>".'<img src="assets/images/etudiant/'. $val['image_etudiant'] .'" height=100 width=100 >'."</td>";
-                    //echo '<img src="image/' . $data["image"] . '">';
                     echo '<td> 
                             <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&modif='.$val['id_etudiant'].'">MODIFIER</a></div><br>
                             <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&act='.$val['id_etudiant'].'">EFFACER</a></div>

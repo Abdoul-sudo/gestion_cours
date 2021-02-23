@@ -107,6 +107,11 @@
                             }
                         }
                     }
+                    elseif ($action=="insertCours") {
+                        require_once("controllers/manageProfesseur.php");
+                        $smth = new ManageProfesseur;
+                        $inst = $smth -> formCours();
+                    }
                 }
                 else
                 {   

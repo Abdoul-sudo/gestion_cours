@@ -7,17 +7,21 @@
             require_once("../models/user.php");
 
             if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['tel']) && isset($_POST['img'])) {
-                $nomEt = $_POST['nom'];
-                $prenomEt = $_POST['prenom'];
-                $emailEt = $_POST['email'];
-                $mdpEt = $_POST['mdp'];
-                $telEt = $_POST['tel'];
-                $imgEt = $_POST['img'];
+                $nomProf = $_POST['nom'];
+                $prenomProf = $_POST['prenom'];
+                $emailProf = $_POST['email'];
+                $mdpProf = $_POST['mdp'];
+                $telProf = $_POST['tel'];
+                $imgProf = $_POST['img'];
 
                 $professeur = new User;
-                $ajoutEt = $professeur -> insertUser('professeur', $nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
+                $ajoutProf = $professeur -> insertUser('professeur', $nomProf, $prenomProf, $telProf, $emailProf, $mdpProf, $imgProf);
                 //header("location:../admin.php?session=admin");
-                header("Location:../admin.php?pgAdmin=pgProf&pg=listeProf");
+                return $nomProf; $prenomProf;
+                
+
+                //header("Location:../admin.php?pgAdmin=pgProf&pg=listeProf");
+                //header("Location:../views/admin/insCours.php");
             }
             else {
                 header("location:../admin.php?pgAdmin=pgProf&erreur=err");
@@ -44,7 +48,7 @@
                             <div><a href="admin.php?pgAdmin=pgProf&pg=listeProf&modif='.$val['id_professeur'].'">MODIFIER</a></div><br>
                             <div><a href="admin.php?pgAdmin=pgProf&pg=listeProf&act='.$val['id_professeur'].'">EFFACER</a></div>
                           </td>';
-                    echo"</tr>";
+                echo"</tr>";
             }
         }
 
@@ -85,6 +89,20 @@
             else {
                 header("location:../admin.php?pgAdmin=pgProf&erreur=err2");
             }
+        }
+        
+        public function formCours()
+        {
+            require_once("models/user.php");
+            $np = new User;
+            $takeid = $np -> listUser('professeur');
+            require_once("views/admin/insCours.php");
+            //insCours($idCat, $idP)
+        }
+
+        public function insCoursC()
+        {
+            
         }
     }
 

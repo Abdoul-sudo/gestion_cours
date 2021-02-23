@@ -41,6 +41,7 @@
                 <input type="password" name="mdp" id="mdp">
             </div>
 
+            
             <div>
                 <h4 for="img">INSERER IMAGE</h4>
                 <input type="file" accept="image/png, image/jpeg" name="img" id="img">
@@ -50,6 +51,8 @@
                 <input type="submit" value="OK">
             </div>
         </form>
+        
+
 
         
     </body>

@@ -8,6 +8,7 @@
 <body>
     <nav>  
         <span><a href="admin.php?session=admin"> Accueil</a></span>  
+        <span><a href="admin.php?pgAdmin=pgProf&pg=insertCours"> Insertion cours</a></span>
         <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
         <span><a href="admin.php?pgAdmin=pgEt">Insertion Etudiant</a></span>
         <span><a href="controllers/logout.php">Deconnexion</a></span>

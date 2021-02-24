@@ -72,7 +72,7 @@
                     }
                 }
             }
-            if ($page == "pgProf") 
+            elseif ($page == "pgProf") 
             {
                 /// On prend pg venant de : formulaireProfesseur.php
                 /// si pg==VIDE, on affiche le formulaire d'insertion des professeurs
@@ -136,7 +136,14 @@
                     }
                 }
             }
+            elseif ($page == "pgCours") {
+                require_once('views/public/listeCours.php'); //liste cours permettant de modifier et supprimer
+            }
             
+            
+        }
+        else {
+            require_once('views/public/listeCours.php'); // liste cours public (visionnage seulement)
         }
     }
     

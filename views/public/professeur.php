@@ -10,9 +10,14 @@
 <body>
     <nav>
         <a href="../../controllers/logout.php">Deconnexion</a><br> 
+        <a href="listeCours.php">Liste des cours</a><br>
         <?php 
             if($_SESSION['admin']){
                 echo '<a href="../../admin.php?session=admin">Page d\'insertion</a>';
+                echo '<a href="../../admin.php?pgAdmin=pgCours">Liste des cours</a><br>';
+            }
+            else {
+                echo '<a href="../../admin.php">Liste des cours</a>';
             }
         ?>
     </nav>

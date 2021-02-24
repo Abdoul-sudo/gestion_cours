@@ -11,6 +11,7 @@
             <span><a href="admin.php?session=admin"> Accueil</a></span>
             <span><a href="admin.php?pgAdmin=pgEt">Insertion Etudiant</a></span>
             <span><<a href="admin.php?pgAdmin=pgProf&pg=listeProf"> Liste des professeurs </a></span>
+            <span><a href="admin.php?pgAdmin=pgCours">Liste des cours</a></span><br>
             <span><a href="controllers/logout.php">Deconnexion</a></span>
         </nav>
         

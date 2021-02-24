@@ -11,7 +11,7 @@
             <span><a href="admin.php?session=admin"> Accueil</a></span>  
             <span><a href="admin.php?pgAdmin=pgProf&pg=insertCours"> Insertion cours</a></span>
             <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
-            <span><a href="views/public/listeCours.php">Liste Coursr</a></span>
+            <span><a href="admin.php?pgAdmin=pgCours">Liste des cours</a></span><br>
             <span><a href="admin.php?pgAdmin=pgEt&pg=listeEt"> Liste des étudiants </a></span>
             <span><a href="controllers/logout.php">Deconnexion</a></span>
         </nav>

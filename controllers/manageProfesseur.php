@@ -17,11 +17,7 @@
                 $professeur = new User;
                 $ajoutProf = $professeur -> insertUser('professeur', $nomProf, $prenomProf, $telProf, $emailProf, $mdpProf, $imgProf);
                 //header("location:../admin.php?session=admin");
-                return $nomProf; $prenomProf;
-                
-
-                //header("Location:../admin.php?pgAdmin=pgProf&pg=listeProf");
-                //header("Location:../views/admin/insCours.php");
+                header("Location:../admin.php?pgAdmin=pgProf&pg=listeProf");
             }
             else {
                 header("location:../admin.php?pgAdmin=pgProf&erreur=err");
@@ -102,7 +98,16 @@
 
         public function insCoursC()
         {
-            
+            require_once("../models/user.php");
+            if (isset($_POST['cours']) && isset($_POST['prof']) && isset($_POST['categorie'])) {
+                $cours = $_POST['cours'];
+                $idP = $_POST['prof'];
+                $idCat = $_POST['categorie'];
+
+                $user = new User;
+                $j = $user -> insCours($cours, $idCat, $idP);
+
+            }
         }
     }
 
@@ -113,6 +118,10 @@
         if ($action == "insert") {
             $a= new ManageProfesseur;
             $i=$a->insertProfesseur();
+        }
+        elseif ($action == "insCours") {
+            $a= new ManageProfesseur;
+            $i=$a->insCoursC();
         }
     }
 

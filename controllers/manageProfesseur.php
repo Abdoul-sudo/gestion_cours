@@ -87,16 +87,15 @@
             }
         }
         
-        public function formCours()
+        public function formCours() // permet d'afficher les choix du select dans insCours.php
         {
             require_once("models/user.php");
             $np = new User;
             $takeid = $np -> listUser('professeur');
             require_once("views/admin/insCours.php");
-            //insCours($idCat, $idP)
         }
 
-        public function insCoursC()
+        public function insCoursC() // insertion cours, 
         {
             require_once("../models/user.php");
             if (isset($_POST['cours']) && isset($_POST['prof']) && isset($_POST['categorie'])) {

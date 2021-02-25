@@ -137,7 +137,38 @@
                 }
             }
             elseif ($page == "pgCours") {
-                require_once('views/public/listeCours.php'); //liste cours permettant de modifier et supprimer
+                if (!empty($_GET["pg"])) 
+                {
+                    // si on appuie sur le lien menant vers la liste dans formulaireEtudiant.php : pg=listeEt
+                    $action= $_GET["pg"];
+                    if ($action=="listeCours") 
+                    {
+                        // si on appuie sur effacer dans la liste
+                        if (!empty($_GET["act"])) 
+                        {
+                            $act = $_GET["act"];
+                            require_once("models/user.php");
+                            $stat = new User;
+                            $del = $stat -> delUser('cours', $act);
+                            header("location:admin.php?pgAdmin=pgCours&pg=listeCours");
+                        }
+                        else 
+                        {   // si on appuie sur modifier dans la liste
+                            if (!empty($_GET["modif"])) 
+                            {
+                                $id = $_GET["modif"];
+                                require_once("controllers/manageCours.php");
+                                $smth = new ManageCours;
+                                $upd = $smth -> takeCours($id);  // appelle le formulaire update contenant les placeholder
+                                
+                            }
+                            else 
+                            {
+                                require_once('views/public/listeCours.php'); //liste cours permettant de modifier et supprimer
+                            }
+                        }
+                    }
+                }
             }
             
             

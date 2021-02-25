@@ -14,7 +14,7 @@
         <?php 
             if($_SESSION['admin']){
                 echo '<a href="../../admin.php?session=admin">Accueil insertion</a><br>';
-                echo '<a href="../../admin.php?pgAdmin=pgCours">Liste des cours</a><br>'; //liste cours pour l'admin
+                echo '<a href="../../admin.php?pgAdmin=pgCours&pg=listeCours">Liste des cours</a><br>'; //liste cours pour l'admin
             }
             else {
                 echo '<a href="../../admin.php">Liste des cours</a>'; //liste cours pour le public

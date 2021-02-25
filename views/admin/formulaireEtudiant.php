@@ -11,13 +11,13 @@
             <span><a href="admin.php?session=admin"> Accueil</a></span>  
             <span><a href="admin.php?pgAdmin=pgProf&pg=insertCours"> Insertion cours</a></span>
             <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
-            <span><a href="admin.php?pgAdmin=pgCours">Liste des cours</a></span><br>
+            <span><a href="admin.php?pgAdmin=pgCours&pg=listeCours">Liste des cours</a></span><br>
             <span><a href="admin.php?pgAdmin=pgEt&pg=listeEt"> Liste des étudiants </a></span>
             <span><a href="controllers/logout.php">Deconnexion</a></span>
         </nav>
         
         <h1> INSERTION ETUDIANT </h1>
-        <form method="post" action="controllers/manageEtudiant?action=insert">
+        <form method="post" action="controllers/manageEtudiant.php?action=insert">
             <div>
                 <h4 for="nom">NOM</h4>
                 <input type="text" name="nom" id="nom">

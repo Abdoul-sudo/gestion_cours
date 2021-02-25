@@ -30,21 +30,43 @@
 
             $etudiant = new User;
             $listeEt = $etudiant -> listUser('etudiant');
-            foreach ($listeEt as $val) 
+
+            if (!empty($_GET["pgAdmin"])) 
             {
-                echo "<tr>";
-                    echo "<td>".$val['id_etudiant']."</td>";
-                    echo "<td>".$val['nom_etudiant']."</td>";
-                    echo "<td>".$val['prenom_etudiant']."</td>";
-                    echo "<td>".$val['email_etudiant']."</td>";
-                    echo "<td>".$val['tel_etudiant']."</td>";
-                    echo "<td>".'<img src="assets/images/etudiant/'. $val['image_etudiant'] .'" height=100 width=100 >'."</td>";
-                    echo '<td> 
-                            <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&modif='.$val['id_etudiant'].'">MODIFIER</a></div><br>
-                            <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&act='.$val['id_etudiant'].'">EFFACER</a></div>
-                          </td>';
-                    echo"</tr>";
+                if ($_GET["pgAdmin"] == "pgEt") 
+                {
+                    foreach ($listeEt as $val) 
+                    {
+                        echo "<tr>";
+                            echo "<td>".$val['id_etudiant']."</td>";
+                            echo "<td>".$val['nom_etudiant']."</td>";
+                            echo "<td>".$val['prenom_etudiant']."</td>";
+                            echo "<td>".$val['email_etudiant']."</td>";
+                            echo "<td>".$val['tel_etudiant']."</td>";
+                            echo "<td>".'<img src="assets/images/etudiant/'. $val['image_etudiant'] .'" height=100 width=100 >'."</td>";
+                            echo '<td> 
+                                    <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&modif='.$val['id_etudiant'].'">MODIFIER</a></div><br>
+                                    <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&act='.$val['id_etudiant'].'">EFFACER</a></div>
+                                </td>';
+                            echo"</tr>";
+                    }
+                }
             }
+            else 
+            {
+                foreach ($listeEt as $val) 
+                {
+                    echo "<tr>";
+                        echo "<td>".$val['id_etudiant']."</td>";
+                        echo "<td>".$val['nom_etudiant']."</td>";
+                        echo "<td>".$val['prenom_etudiant']."</td>";
+                        echo "<td>".$val['email_etudiant']."</td>";
+                        echo "<td>".$val['tel_etudiant']."</td>";
+                        echo "<td>".'<img src="assets/images/etudiant/'. $val['image_etudiant'] .'" height=100 width=100 >'."</td>";
+                        echo"</tr>";
+                }
+            } 
+            
         }
 
         public function takeEtudiant($id) // sert à SELECT la ligne qu'on veut modifier  // appelée dans admin.php

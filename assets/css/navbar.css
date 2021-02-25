@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    color: black;
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.center{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+header{
+    border-bottom: 1px solid #eee;
+}
+
+header li{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+header li span{
+    display: block;
+    padding: 20px;
+}
+header li span:hover{
+    background-color: aqua;
+    color: azure;
+}
+
+header li a{
+    display: block;
+    padding: 20px;
+}
+header li:hover a{
+    background-color: aqua;
+    color: azure;
+}
+
+header li:hover .sous-menu{
+    display: block;
+}
+.sous-menu{
+    display: none;
+    position: absolute;
+    background-color: aqua;
+    width: 200px;
+}
+
+.sous-menu li{
+    display: block;
+}
+.sous-menu li a{
+    color: azure;
+}
+.sous-menu li:hover a{
+    background-color: azure;
+    color: aqua;
+}

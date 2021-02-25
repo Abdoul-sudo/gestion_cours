@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-        <form action="controllers/manageProfesseur?action=insCours" method="post">
+        <form action="controllers/manageCours?action=insCours" method="post">
 
             <label for="cours"> COURS</label>
             <input type="text" name="cours" id="cours">

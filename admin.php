@@ -5,7 +5,8 @@
     if (!empty($_GET["session"])) 
     {
         echo '<a href="?pgAdmin=pgEt">Insertion étudiant</a><br>';
-        echo '<a href="?pgAdmin=pgProf">Insertion prof</a>';
+        echo '<a href="?pgAdmin=pgProf">Insertion prof</a><br>';
+        echo '<a href="?pgAdmin=pgProf&pg=insertCours">Insertion cours</a>';
     }
     else 
     {
@@ -39,7 +40,9 @@
                                 $id = $_GET["modif"];
                                 require_once("controllers/manageEtudiant.php");
                                 $smth = new ManageEtudiant;
-                                $upd = $smth -> takeEtudiant($id);  // appelle le formulaire update contenant les placeholder
+                                //appelle la méthode takeEtudiant.php permettant d'afficher modifEtudiant.php
+                                // qui est le formulaire de modification
+                                $upd = $smth -> takeEtudiant($id);  
                                 
                             }
                             else 
@@ -59,8 +62,9 @@
                             require_once("views/admin/listeEtudiant.php");
                             echo "<p style='color:red'>Erreur d'insertion</p>";
                         }
-                        elseif ($erreur=="err2") // regarder s'il y a erreur= err venant de manageEtudiant ( modification echec)
+                        elseif ($erreur=="err2")
                         {
+                             // regarder s'il y a erreur= err venant de manageEtudiant ( modification echec)
                             require_once("views/admin/listeEtudiant.php");
                             echo "<p style='color:red'>Erreur de modification</p>";
                         }
@@ -82,7 +86,7 @@
                     $action= $_GET["pg"];
                     if ($action=="listeProf") 
                     {
-                        // si on appuie sur effacer dans la liste
+                        // si on appuie sur effacer dans listeProfesseur.php
                         if (!empty($_GET["act"])) 
                         {
                             $act = $_GET["act"];
@@ -92,25 +96,29 @@
                             header("location:admin.php?pgAdmin=pgProf&pg=listeProf");
                         }
                         else 
-                        {   // si on appuie sur modifier dans la liste
+                        {   // si on appuie sur modifier dans listeProfesseur.php
                             if (!empty($_GET["modif"])) 
                             {
                                 $id = $_GET["modif"];
                                 require_once("controllers/manageProfesseur.php");
                                 $smth = new ManageProfesseur;
-                                $upd = $smth -> takeProfesseur($id);  // appelle le formulaire update contenant les placeholder
+                                //appelle la méthode takeProfeseur.php permettant d'afficher modifProfesseur.php
+                                // qui est le formulaire de modification
+                                $upd = $smth -> takeProfesseur($id);  
                                 
                             }
                             else 
                             {
-                                require_once("views/admin/listeProfesseur.php"); //appelle la liste de Professeurs
+                                //appelle la liste de Professeurs
+                                require_once("views/admin/listeProfesseur.php"); 
                             }
                         }
                     }
                     elseif ($action=="insertCours") {
-                        require_once("controllers/manageProfesseur.php");
-                        $smth = new ManageProfesseur;
-                        $inst = $smth -> formCours();
+                        require_once("controllers/manageCours.php");
+                        $smth = new ManageCours;
+                        // appelle la méthode formCours pou afficher formulaireCours.php
+                        $inst = $smth -> formCours(); 
                     }
                 }
                 else
@@ -118,20 +126,23 @@
                     if (!empty($_GET["erreur"])) 
                     {
                         $erreur= $_GET["erreur"];
-                        if ($erreur=="err") // regarder s'il y a erreur= err venant de manageProfesseur ( insertion echec)
+                        if ($erreur=="err") 
                         {
+                            // regarder s'il y a erreur= err venant de manageProfesseur ( insertion echec)
                             require_once("views/admin/listeProfesseur.php");
                             echo "<p style='color:red'>Erreur d'insertion</p>";
                         }
                         
-                        elseif ($erreur=="err2")  // regarder s'il y a erreur= err venant de manageProfesseur ( modification echec)
+                        elseif ($erreur=="err2")  
                         {
+                            // regarder s'il y a erreur= err venant de manageProfesseur ( modification echec)
                             require_once("views/admin/listeProfesseur.php");
                             echo "<p style='color:red'>Erreur de modification</p>";
                         }
                     }
                     else 
                     {
+                        // on insère un professeur
                         require_once('views/admin/formulaireProfesseur.php');
                     }
                 }
@@ -143,7 +154,7 @@
                     $action= $_GET["pg"];
                     if ($action=="listeCours") 
                     {
-                        // si on appuie sur effacer dans la liste
+                        // si on appuie sur effacer dans listeCours.php
                         if (!empty($_GET["act"])) 
                         {
                             $act = $_GET["act"];
@@ -153,18 +164,21 @@
                             header("location:admin.php?pgAdmin=pgCours&pg=listeCours");
                         }
                         else 
-                        {   // si on appuie sur modifier dans la liste
+                        {   // si on appuie sur modifier dans listeCours.php
                             if (!empty($_GET["modif"])) 
                             {
                                 $id = $_GET["modif"];
                                 require_once("controllers/manageCours.php");
                                 $smth = new ManageCours;
-                                $upd = $smth -> takeCours($id);  // appelle le formulaire update contenant les placeholder
+                                //appelle la méthode takeCours.php pour afficher modifCours.php
+                                // qui est le formulaire de modification
+                                $upd = $smth -> takeCours($id);  
                                 
                             }
                             else 
                             {
-                                require_once('views/public/listeCours.php'); //liste cours permettant de modifier et supprimer
+                                //liste cours pour ADMIN permettant de modifier et supprimer
+                                require_once('views/public/listeCours.php'); 
                             }
                         }
                     }
@@ -173,8 +187,27 @@
             
             
         }
-        else {
-            require_once('views/public/listeCours.php'); // liste cours public (visionnage seulement)
+        else 
+        {
+            if (!empty($_GET["pgPublic"])) 
+            {
+                if ($_GET["pgPublic"]=="pgCours") 
+                {
+                    // liste cours public (visionnage seulement)
+                    require_once('views/public/listeCours.php'); 
+                }
+                elseif ($_GET["pgPublic"]=="pgEtudiant") 
+                {
+                    // liste etudiant public (visionnage seulement)
+
+                    require_once("views/admin/listeEtudiant.php");
+                }
+                elseif ($_GET["pgPublic"]=="pgProfesseur") 
+                {
+                    // liste professeur public (visionnage seulement)
+                    require_once("views/admin/listeProfesseur.php");
+                }
+            }
         }
     }
     

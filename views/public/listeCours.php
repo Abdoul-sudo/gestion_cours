@@ -6,12 +6,7 @@
     <title>ListeCours</title>
 </head>
 <body>
-    <nav> 
         <?php require("views/admin/menuAdmin.php"); ?>
-
-        
-        <span><a href="controllers/logout.php">Deconnexion</a></span>
-    </nav>
 
     <h1>LISTE DES COURS</h1>
     <table>

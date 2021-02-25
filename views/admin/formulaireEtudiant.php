@@ -10,7 +10,7 @@
         <?php require("views/admin/menuAdmin.php");?>
         
         <h1> INSERTION ETUDIANT </h1>
-        <form method="post" action="controllers/manageEtudiant.php?action=insert">
+        <form method="post" action="controllers/manageEtudiant.php?action=insert"> 
             <div>
                 <h4 for="nom">NOM</h4>
                 <input type="text" name="nom" id="nom">

@@ -30,22 +30,42 @@
 
             $professeur = new User;
             $listeEt = $professeur -> listUser('professeur');
-            foreach ($listeEt as $val) 
+
+            if (!empty($_GET["pgAdmin"])) 
             {
-                echo "<tr>";
-                    echo "<td>".$val['id_professeur']."</td>";
-                    echo "<td>".$val['nom_professeur']."</td>";
-                    echo "<td>".$val['prenom_professeur']."</td>";
-                    echo "<td>".$val['email_professeur']."</td>";
-                    echo "<td>".$val['tel_professeur']."</td>";
-                    echo "<td>".'<img src="assets/images/professeur/'. $val['image_professeur'] .'" height=100 width=100 >'."</td>";
-                    //echo '<img src="image/' . $data["image"] . '">';
-                    echo '<td> 
-                            <div><a href="admin.php?pgAdmin=pgProf&pg=listeProf&modif='.$val['id_professeur'].'">MODIFIER</a></div><br>
-                            <div><a href="admin.php?pgAdmin=pgProf&pg=listeProf&act='.$val['id_professeur'].'">EFFACER</a></div>
-                          </td>';
-                echo"</tr>";
+                if ($_GET["pgAdmin"] == "pgProf") 
+                {
+                    foreach ($listeEt as $val) 
+                    {
+                        echo "<tr>";
+                            echo "<td>".$val['id_professeur']."</td>";
+                            echo "<td>".$val['nom_professeur']."</td>";
+                            echo "<td>".$val['prenom_professeur']."</td>";
+                            echo "<td>".$val['email_professeur']."</td>";
+                            echo "<td>".$val['tel_professeur']."</td>";
+                            echo "<td>".'<img src="assets/images/professeur/'. $val['image_professeur'] .'" height=100 width=100 >'."</td>";
+                            echo '<td> 
+                                    <div><a href="admin.php?pgAdmin=pgProf&pg=listeProf&modif='.$val['id_professeur'].'">MODIFIER</a></div><br>
+                                    <div><a href="admin.php?pgAdmin=pgProf&pg=listeProf&act='.$val['id_professeur'].'">EFFACER</a></div>
+                                </td>';
+                        echo"</tr>";
+                    }
+                }
+            } 
+            else {
+                foreach ($listeEt as $val) 
+                    {
+                        echo "<tr>";
+                            echo "<td>".$val['id_professeur']."</td>";
+                            echo "<td>".$val['nom_professeur']."</td>";
+                            echo "<td>".$val['prenom_professeur']."</td>";
+                            echo "<td>".$val['email_professeur']."</td>";
+                            echo "<td>".$val['tel_professeur']."</td>";
+                            echo "<td>".'<img src="assets/images/professeur/'. $val['image_professeur'] .'" height=100 width=100 >'."</td>";
+                        echo"</tr>";
+                    }
             }
+            
         }
 
         public function takeProfesseur($id) // sert à SELECT la ligne qu'on veut modifier  // appelée dans admin.php
@@ -87,40 +107,15 @@
             }
         }
         
-        public function formCours() // permet d'afficher les choix du select dans insCours.php
-        {
-            require_once("models/user.php");
-            $np = new User;
-            $takeid = $np -> listUser('professeur');
-            require_once("views/admin/insCours.php");
-        }
-
-        public function insCoursC() // insertion cours, 
-        {
-            require_once("../models/user.php");
-            if (isset($_POST['cours']) && isset($_POST['prof']) && isset($_POST['categorie'])) {
-                $cours = $_POST['cours'];
-                $idP = $_POST['prof'];
-                $idCat = $_POST['categorie'];
-
-                $user = new User;
-                $j = $user -> insCours($cours, $idCat, $idP);
-
-            }
-        }
+        
     }
 
 
     if (!empty($_GET["action"])) {
         $action= $_GET["action"];
-
         if ($action == "insert") {
             $a= new ManageProfesseur;
             $i=$a->insertProfesseur();
-        }
-        elseif ($action == "insCours") {
-            $a= new ManageProfesseur;
-            $i=$a->insCoursC();
         }
     }
 

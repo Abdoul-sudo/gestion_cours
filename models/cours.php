@@ -5,7 +5,7 @@
         public function getCours()
         {
             $bdd = $this -> dbConnect();
-            $sql = $bdd->prepare('SELECT id_cours, nom_cours, categorie.designation_cat, professeur.nom_professeur FROM cours JOIN categorie ON cours.id_cat=categorie.id_cat JOIN professeur ON cours.id_professeur=professeur.id_professeur');
+            $sql = $bdd->prepare('SELECT id_cours, nom_cours, categorie.designation_cat, professeur.nom_professeur, professeur.prenom_professeur FROM cours JOIN categorie ON cours.id_cat=categorie.id_cat JOIN professeur ON cours.id_professeur=professeur.id_professeur');
 
             $sql -> execute();
             $tab = $sql -> fetchall();

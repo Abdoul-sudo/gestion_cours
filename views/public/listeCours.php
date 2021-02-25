@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +7,8 @@
 </head>
 <body>
     <nav> 
-        <?php 
-            if($_SESSION['admin']){
-                echo '
-                <span><a href="admin.php?session=admin"> Accueil</a></span>  
-                <span><a href="admin.php?pgAdmin=pgProf&pg=insertCours"> Insertion cours</a></span>
-                <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
-                <span><a href="admin.php?pgAdmin=pgEt">Insertion Etudiant</a></span>'; 
-            }
-            
-        ?> 
+        <?php require("views/admin/menuAdmin.php"); ?>
+
         
         <span><a href="controllers/logout.php">Deconnexion</a></span>
     </nav>

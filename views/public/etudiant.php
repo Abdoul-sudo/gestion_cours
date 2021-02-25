@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <a href="../../controllers/logout.php">Deconnexion</a><br> 
-        <span></span><br>
-        <?php 
-            if($_SESSION['admin']){
-                echo '<a href="../../admin.php?session=admin">Accueil insertion</a><br>';
-                echo '<a href="../../admin.php?pgAdmin=pgCours&pg=listeCours">Liste des cours</a><br>'; //liste cours pour l'admin
-            }
-            else {
-                echo '<a href="../../admin.php">Liste des cours</a>'; //liste cours pour le public
-            }
-        ?>
-    </nav>
+    <?php require("menuPublic.php"); ?>
 
     <?php 
         

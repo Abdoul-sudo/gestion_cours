@@ -8,3 +8,7 @@
 		$_SESSION["admin"] = $tab['admin'];
 		$_SESSION["loggedIn"] = true;
 	}
+	function listPotentialRecipients(){
+		$db = new User;
+		$studentTab = $db->listUser('etudiant');
+	}

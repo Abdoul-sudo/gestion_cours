@@ -26,7 +26,7 @@
 
 
         <?php 
-            require("controllers/ManageEtudiant.php");
+            require("controllers/manageEtudiant.php");
             $et = new ManageEtudiant;
             $list = $et -> listEtudiant();  
         ?>

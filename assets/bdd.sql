@@ -72,11 +72,11 @@ CREATE TABLE message(
         id_mess      Int  Auto_increment  NOT NULL ,
         date_mess    Datetime NOT NULL ,
         contenu_mess Text NOT NULL ,
-        id_professeur      Int NOT NULL ,
+        -- id_professeur      Int NOT NULL ,
         id_etudiant  Int NOT NULL
 	,CONSTRAINT message_PK PRIMARY KEY (id_mess)
 
-	,CONSTRAINT message_professeur_FK FOREIGN KEY (id_professeur) REFERENCES professeur(id_professeur)
+	-- ,CONSTRAINT message_professeur_FK FOREIGN KEY (id_professeur) REFERENCES professeur(id_professeur)
 	,CONSTRAINT message_etudiant0_FK FOREIGN KEY (id_etudiant) REFERENCES etudiant(id_etudiant)
 )ENGINE=InnoDB;
 

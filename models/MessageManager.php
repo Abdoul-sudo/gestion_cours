@@ -1,5 +1,4 @@
 <?php
-	require ('../models/Message.php');
 	class MessageManager extends Database
 	{
 		public function sendMessage(Message $message)
@@ -32,12 +31,22 @@
 			');
 			return $q;
 		}
-		public function updateMessage($messageId)
+		public function updateMessage(Message $message)
 		{
-			//modification du message
+			$db = dbConnect();
+			$q = $db->prepare('
+				UPDATE message
+				SET contenu_mess = :contenu_mess, date_mess = NOW()
+				WHERE id_mess = :id_mess
+				')
+			$q->bindValue(':contenu_mess', $message->content());
+			$q->bindValue(':id_mess', $message->id());
+			$q->execute();
 		}
-		public function deleteMessage($messageId)
+		public function deleteMessage(Message $message)
 		{
-			//message à supprimer
+			$db = dbConnect();
+			$q = $db->prepare('DELETE FROM message WHERE id_mess = ?');
+			$q->execute($message->id());
 		}
 	}

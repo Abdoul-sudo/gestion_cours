@@ -1,23 +1,32 @@
 <?php
+	require('connect.php');
 	class MessageManager extends Database
 	{
 		public function sendMessage(Message $message)
 		{
-			$db = dbConnect();
-			$q = $db->prepare('
+			$db = $this->dbConnect();
+			$tab = $message->recipient();
+			// echo $tab[0];
+			// echo $message->content();
+			// echo $message->sender();
+			// var_dump($message->sender());
+			// var_dump(intval($message->sender()));
+			for($i=0; $i<count($tab); $i++){
+				$q = $db->prepare('
 				INSERT INTO message(date_mess, contenu_mess, id_etudiant)
 				VALUES(NOW(), :contenu_mess, :id_exp);
 				INSERT INTO recevoir(id_etudiant, id_mess)
 				VALUES(:id_dest, LAST_INSERT_ID())
 				');
-			$q->bindValue(':contenu_mess', $message->content());
-			$q->bindValue(':id_etudiant', $message->sender());
-			$q->bindValue(':id_dest', $message->recipient())
-			$q->execute();
+				// $q->bindValue(':contenu_mess', $message->content(), PDO::PARAM_STR);
+				// $q->bindValue(':id_etudiant', intval($message->sender()), PDO::PARAM_INT);
+				// $q->bindValue(':id_dest', intval($tab[$i]), PDO::PARAM_INT);
+				$q->execute(array('contenu_mess'=>$message->content(), 'id_exp'=>intval($message->sender()), 'id_dest' =>intval($tab[$i])));
+			}	
 		}
 		public function getMessages($exp)
 		{
-			$db = dbConnect();
+			$db = this->dbConnect();
 			$q = $db->query('
 				SELECT id_mess, contenu_mess, date_mess,
 				message.id_etudiant AS id_exp,
@@ -38,7 +47,7 @@
 				UPDATE message
 				SET contenu_mess = :contenu_mess, date_mess = NOW()
 				WHERE id_mess = :id_mess
-				')
+				');
 			$q->bindValue(':contenu_mess', $message->content());
 			$q->bindValue(':id_mess', $message->id());
 			$q->execute();

@@ -26,11 +26,11 @@
 		}
 		public function sender()
 		{
-			return $this->_sender
+			return $this->_sender;
 		}
 		public function recipient()
 		{
-			return $this->_recipient
+			return $this->_recipient;
 		}
 
 		//mutateurs

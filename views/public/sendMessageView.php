@@ -1,19 +1,24 @@
 <?php
 	session_start();
+	require ('../../models/user.php');
+	require ('../../controllers/function.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Envoyer Message</title>
+	<title>Envoyer un message</title>
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<form action="../../messageComputing.php" method="POST">
-			<input type="text">
-			<input type="text">
-			<textarea name="" id="" cols="30" rows="10"></textarea>
+	<form action="../../controllers/messageComputing.php" method="POST">	
+		<p><strong>Selectionnez le(s) destinataire(s):</strong></p>
+		<?php listPotentialRecipients();?>
+		<p><strong>Message :</strong></p>
+		<textarea name="message" id="message" cols="50" rows="10"></textarea><br>
+		<input type="submit" value="Envoyer">
+
 	</form>	
 </body>
 </html>

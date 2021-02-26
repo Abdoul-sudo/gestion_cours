@@ -2,6 +2,10 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: Impact, fantasy;
+    background-image: url("../images/space/10.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .box{
@@ -11,15 +15,17 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #191919;
+    background-color: #040c22;
     text-align: center;
+    margin-top: 10%;
 }
 
-.box h1{
+.box h1, .box h4{
     color: white;
     text-transform: uppercase;
     font-weight: 500;
 }
+
 
 .box input[type = "text"], .box input[type = "password"]{
     border: 0;
@@ -28,7 +34,7 @@ body{
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #3498db;
+    border: 2px solid #7efff5;
     padding: 14px 10px;
     width: 200px;
     outline: none;
@@ -38,7 +44,7 @@ body{
 
 .box input[type = "text"]:focus, .box input[type = "password"]:focus{
     width: 280px;
-    border-color: #FDA7DF;
+    border-color: #fff200;
 }
 
 .box input[type = "submit"]{
@@ -48,7 +54,7 @@ body{
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #82589F;
+    border: 2px solid #fff200;
     padding: 14px 40px;
     outline: none;
     border-radius: 24px;
@@ -57,6 +63,29 @@ body{
 }
 
 .box input[type = "submit"]:hover{
-    background-color: #82589F;
-    color: white;
+    background-color: #ffd32a;
+    color: #130f40;
+    font-weight: bolder;
+}
+
+
+.box input[type = "file"]{
+    border: 0;
+    color: #bdc3c7;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* #################  COURS  ################# */
+#submitCours{
+    margin-top: 70px;
+}
+
+#boxCours{
+    margin-top: 5%;
 }

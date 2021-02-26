@@ -17,12 +17,12 @@
             <nav>
                 <ul>
                 <?php if ($_SESSION['status'] == 'etudiant'): ?>
-                    <li><a href="views/public/etudiant.php">Accueil</a></li>
+                    <li class="menuAc"><a href="views/public/etudiant.php">Accueil</a></li>
                 <?php elseif ($_SESSION['status'] == 'professeur'): ?> 
-                    <li><a href="views/public/professeur.php">Accueil</a></li>
+                    <li class="menuAc"><a href="views/public/professeur.php">Accueil</a></li>
                 <?php endif; ?>
                    
-                    <li class="menu1">
+                    <li class="menuIns">
                         <a href="admin.php?session=admin"> Insertion</a>
                         <ul class="submenu"> 
                             <li><a  href="admin.php?pgAdmin=pgEt">Insertion Etudiant</a></li>
@@ -31,7 +31,7 @@
                         </ul>
                     </li>
                     
-                    <li class="menu2">
+                    <li class="menuLi">
                         <span>Liste</span>
                         <ul class="submenu">
                             <li><a href="admin.php?pgAdmin=pgEt&pg=listeEt"> Liste des étudiants </a></li>
@@ -40,14 +40,14 @@
                         </ul>
                     </li>
 
-                    <li><a href="controllers/logout.php">Deconnexion</a></li>
+                    <li class="menuDec"><a href="controllers/logout.php">Deconnexion</a></li>
                 </ul>
             </nav>
 
     <?php else:?>
             <nav>
                 <ul>
-                    <li class="menu2">
+                    <li class="menuLi">
                         <span>Liste</span>
                         <ul class="submenu">
                             <li><a href="admin.php?pgPublic=pgEtudiant"> Liste des étudiants </a></li>
@@ -56,7 +56,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="controllers/logout.php">Deconnexion</a></li>
+                    <li class="menuDec"><a href="controllers/logout.php">Deconnexion</a></li>
                 </ul>
             </nav>
     <?php endif;?>

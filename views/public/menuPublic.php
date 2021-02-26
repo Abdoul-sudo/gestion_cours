@@ -19,7 +19,7 @@
                 <?php if ($_SESSION['status'] == 'etudiant'): ?>
                     <li class="menuAc"><a href="etudiant.php">Accueil</a></li>
                 <?php elseif ($_SESSION['status'] == 'professeur'): ?> 
-                    <li><a href="professeur.php">Accueil</a></li>
+                    <li class="menuAc"><a href="professeur.php">Accueil</a></li>
                 <?php endif; ?>
                    
                     <li class="menuIns">
@@ -56,7 +56,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="../../controllers/logout.php">Deconnexion</a></li>
+                    <li class="menuDec"><a href="../../controllers/logout.php">Deconnexion</a></li>
                 </ul>
             </nav>
     <?php endif;?>

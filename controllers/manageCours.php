@@ -112,7 +112,7 @@
         $action= $_GET["action"];
         if ($action == "insCours")  //$_GET["action"] provient de formulaireCours.php
         { 
-            $a= new ManageProfesseur;
+            $a= new ManageCours;
             $i=$a->insCoursC();
         }
     }

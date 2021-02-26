@@ -1,7 +1,9 @@
 body{
     font-family: 'Source code pro', Calibri, serif;
+    /* font-family: Impact, fantasy; */
     margin: 0px;
     padding: 0px;
+    
 }
 
 nav{
@@ -80,8 +82,8 @@ nav li:hover .submenu{
 }
 /* menu au survol de la souris */
 .menuAc:hover{
-    border-top: 5px solid #e44d26;
-    background-color: RGBa(228, 77,38, 0.15);
+    border-top: 5px solid #bbb;
+    background-color: RGBa(220, 220, 220, 0.15);
 }
 .menuIns:hover{
     border-top: 5px solid #0070bb;
@@ -92,8 +94,9 @@ nav li:hover .submenu{
     background-color: RGBa(241, 211, 79, 0.15);
 }
 .menuDec:hover{
-    border-top: 5px solid #bbb;
-    background-color: RGBa(220, 220, 220, 0.15);
+    
+    border-top: 5px solid #e44d26;
+    background-color: RGBa(228, 77,38, 0.15);
 }
 
 /*submenu des menu */
@@ -112,9 +115,9 @@ nav li:hover .submenu{
     color: #eee;
     font-weight: bold;
 }
-.menuAc .submenu li:hover{
+/* .menuAc .submenu li:hover{
     background-color: RGB(210, 77, 60);
-}
+} */
 .menuIns .submenu li:hover{
     background-color: RGB(000, 115, 200);
 }

@@ -16,7 +16,6 @@
 
                 $etudiant = new User;
                 $ajoutEt = $etudiant -> insertUser('etudiant', $nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                //header("location:../admin.php?session=admin");
                 header("Location:../admin.php?pgAdmin=pgEt&pg=listeEt");
             }
             else {
@@ -30,7 +29,7 @@
 
             $etudiant = new User;
             $listeEt = $etudiant -> listUser('etudiant');
-            foreach ($listeEt as $val) 
+            foreach ($listeEt as $val)
             {
                 echo "<tr>";
                     echo "<td>".$val['id_etudiant']."</td>";

@@ -6,21 +6,13 @@
 		{
 			$db = $this->dbConnect();
 			$tab = $message->recipient();
-			// echo $tab[0];
-			// echo $message->content();
-			// echo $message->sender();
-			// var_dump($message->sender());
-			// var_dump(intval($message->sender()));
 			for($i=0; $i<count($tab); $i++){
 				$q = $db->prepare('
 				INSERT INTO message(date_mess, contenu_mess, id_etudiant)
-				VALUES(NOW(), :contenu_mess, :id_exp);
+				VALUES(NOW(), :contenu_mess, :id_exp);				
 				INSERT INTO recevoir(id_etudiant, id_mess)
 				VALUES(:id_dest, LAST_INSERT_ID())
 				');
-				// $q->bindValue(':contenu_mess', $message->content(), PDO::PARAM_STR);
-				// $q->bindValue(':id_etudiant', intval($message->sender()), PDO::PARAM_INT);
-				// $q->bindValue(':id_dest', intval($tab[$i]), PDO::PARAM_INT);
 				$q->execute(array('contenu_mess'=>$message->content(), 'id_exp'=>intval($message->sender()), 'id_dest' =>intval($tab[$i])));
 			}	
 		}

@@ -2,6 +2,7 @@
 	require('connect.php');
 	class MessageManager extends Database
 	{
+		//Application de la méthode CRUD
 		public function sendMessage(Message $message)
 		{
 			$db = $this->dbConnect();

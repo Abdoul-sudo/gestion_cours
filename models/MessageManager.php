@@ -13,41 +13,66 @@
 				INSERT INTO recevoir(id_etudiant, id_mess)
 				VALUES(:id_dest, LAST_INSERT_ID())
 				');
-				$q->execute(array('contenu_mess'=>$message->content(), 'id_exp'=>intval($message->sender()), 'id_dest' =>intval($tab[$i])));
+				$q->execute(array('contenu_mess'=>$message->content(), 'id_exp'=>intval($message->sender()), 'id_dest'=>intval($tab[$i])));
 			}	
 		}
-		public function getMessages($exp)
+		public function getReceivedMessages(Message $message)
 		{
-			$db = this->dbConnect();
-			$q = $db->query('
-				SELECT id_mess, contenu_mess, date_mess,
-				message.id_etudiant AS id_exp,
-				recevoir.id_etudiant AS id_dest
-
-				FROM message JOIN recevoir  ON message.id_mess = recevoir.id_mess
-
-				WHERE message.id_etudiant = $exp OR recevoir.id_etudiant = $exp
-
+			$db = $this->dbConnect();
+			$q = $db->prepare('
+				SELECT m.id_mess mId, m.contenu_mess content, DATE_FORMAT(m.date_mess, \'%d/%m/%Y %H:%i\') mDate,
+				m.id_etudiant idExp, e.prenom_etudiant prenomExp,
+				e.nom_etudiant nomExp, e.email_etudiant emailDest
+				FROM message m
+				INNER JOIN recevoir r
+				INNER JOIN etudiant e
+				ON m.id_mess = r.id_mess AND m.id_etudiant = e.id_etudiant
+				WHERE r.id_etudiant = ?
 				ORDER BY date_mess DESC
 			');
-			return $q;
+			$q->execute(array(intval($message->recipient())));
+			$data = $q->fetchall(PDO::FETCH_ASSOC);
+			return $data;
+		}
+		public function getSentMessages(Message $message)
+		{
+			$db = $this->dbConnect();
+			$q =$db->prepare('
+				SELECT m.id_mess mId, m.contenu_mess content, DATE_FORMAT(m.date_mess, \'%d/%m/%Y %H:%i\') mDate,
+				r.id_etudiant idDest, e.prenom_etudiant prenomDest,
+				e.nom_etudiant nomDest, e.email_etudiant emailDest
+				FROM message m
+				JOIN recevoir r 
+				JOIN etudiant e 
+				ON m.id_mess = r.id_mess AND r.id_etudiant = e.id_etudiant
+				WHERE m.id_etudiant = ?
+				ORDER BY date_mess DESC
+				');
+			$q->execute(array(intval($message->sender())));
+			$data = $q->fetchall(PDO::FETCH_ASSOC);
+			return $data;
 		}
 		public function updateMessage(Message $message)
 		{
-			$db = dbConnect();
+			$db = $this->dbConnect();
 			$q = $db->prepare('
 				UPDATE message
 				SET contenu_mess = :contenu_mess, date_mess = NOW()
 				WHERE id_mess = :id_mess
 				');
 			$q->bindValue(':contenu_mess', $message->content());
-			$q->bindValue(':id_mess', $message->id());
+			$q->bindValue(':id_mess', intval($message->id()));
 			$q->execute();
 		}
 		public function deleteMessage(Message $message)
 		{
-			$db = dbConnect();
-			$q = $db->prepare('DELETE FROM message WHERE id_mess = ?');
-			$q->execute($message->id());
+			$db = $this->dbConnect();
+			$q = $db->prepare('
+				DELETE FROM message 
+				WHERE id_mess = ?;
+				DELETE FROM recevoir
+				WHERE id_mess = ?
+				');
+			$q->execute(array(intval($message->id()), intval($message->id()));
 		}
 	}

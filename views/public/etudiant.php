@@ -9,10 +9,9 @@
 <body>
     <?php require("menuPublic.php"); ?>
 
-    <?php 
-        
-        echo 'Bienvenue étudiant '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';
-        
+    <?php    
+        echo 'Bienvenue étudiant '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';    
+
     ?>
 </body>
 </html>

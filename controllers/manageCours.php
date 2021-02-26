@@ -61,6 +61,7 @@
 
                 $user = new User;
                 $j = $user -> insCours($cours, $idCat, $idP);
+                header("Location:../admin.php?pgAdmin=pgCours&pg=listeCours");
 
             }
         }

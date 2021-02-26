@@ -16,7 +16,6 @@
 
                 $etudiant = new User;
                 $ajoutEt = $etudiant -> insertUser('etudiant', $nomEt, $prenomEt, $telEt, $emailEt, $mdpEt, $imgEt);
-                //header("location:../admin.php?session=admin");
                 header("Location:../admin.php?pgAdmin=pgEt&pg=listeEt");
             }
             else {

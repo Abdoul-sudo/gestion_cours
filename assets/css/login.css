@@ -2,6 +2,10 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: Impact, fantasy;
+    background-image: url("../images/space/1.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .box{

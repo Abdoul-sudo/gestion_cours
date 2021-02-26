@@ -16,6 +16,8 @@
             <nav>
                 <ul>
 
+                <li id="logo"><?php echo '<img src="../../assets/images/etudiant/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
+
                 <?php if ($_SESSION['status'] == 'etudiant'): ?>
                     <li class="menuAc"><a href="etudiant.php">Accueil</a></li>
                 <?php elseif ($_SESSION['status'] == 'professeur'): ?> 
@@ -23,7 +25,7 @@
                 <?php endif; ?>
                    
                     <li class="menuIns">
-                        <a href="../../admin.php?session=admin"> Insertion</a>
+                        <span> Insertion</span>
                         <ul class="submenu"> 
                             <li><a  href="../../admin.php?pgAdmin=pgEt">Insertion Etudiant</a></li>
                             <li><a href="../../admin.php?pgAdmin=pgProf">Insertion professeur</a></li>
@@ -41,12 +43,15 @@
                     </li>
 
                     <li class="menuDec"><a href="../../controllers/logout.php">Deconnexion</a></li>
+
                 </ul>
             </nav>
 
     <?php else:?>
             <nav>
                 <ul>
+                    <li id="logo"><?php echo '<img src="../../assets/images/etudiant/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
+
                     <li class="menuLi">
                         <span>Liste</span>
                         <ul class="submenu">
@@ -57,6 +62,7 @@
                     </li>
 
                     <li class="menuDec"><a href="../../controllers/logout.php">Deconnexion</a></li>
+
                 </ul>
             </nav>
     <?php endif;?>

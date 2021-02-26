@@ -15,7 +15,7 @@
     <table>
         <tr>
             <th>COURS</th>
-            <th>PROFESSEUR</th>
+            <th>ENSEIGNANT DU COURS</th>
             <th>CATEGORIE</th>
         </tr>
 

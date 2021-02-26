@@ -13,6 +13,9 @@
     <?php 
         
         echo 'Bienvenue professeur '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';
+
+        echo '<img src="../../assets/images/etudiant/'. $_SESSION['image'].'" >';
+
         
     ?>
 </body>

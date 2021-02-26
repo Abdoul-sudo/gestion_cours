@@ -124,3 +124,7 @@ nav li:hover .submenu{
 .menuLi .submenu li:hover{
     background-color: RGB(200, 165, 75);
 }
+
+#logo{
+    margin-right: 100px;
+}

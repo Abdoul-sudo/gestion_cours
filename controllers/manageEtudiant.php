@@ -29,6 +29,7 @@
 
             $etudiant = new User;
             $listeEt = $etudiant -> listUser('etudiant');
+<<<<<<< HEAD
 
             if (!empty($_GET["pgAdmin"])) 
             {

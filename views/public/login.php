@@ -1,15 +1,15 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="/assets/css/style.css" media="screen" type="text/css" />
+        <title>Login</title>
+        <!-- <link rel="stylesheet" href="/assets/css/style.css" media="screen" type="text/css" /> -->
+        <link rel="stylesheet" href="assets/css/login.css">
     </head>
     <body>
         <div id="container">          
-            <form action="controllers/verification.php" method="POST">
-                <h1>Connexion</h1>                
-                <label><b>Email</b></label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="email" required>
-                <label><b>Mot de passe</b></label>
+            <form class="box" action="controllers/verification.php" method="POST">
+                <h1>Login</h1>                
+                <input type="text" placeholder="Entrer l'email d'utilisateur" name="email" autocomplete="off" required>
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
                 <input type="submit" id='submit' value='LOGIN' >
                 <?php
@@ -21,7 +21,6 @@
                 ?>
             </form>
         </div>
-        <a href="admin.php?session=admin">Page d\'insertion</a>
 
     </body>
 </html>

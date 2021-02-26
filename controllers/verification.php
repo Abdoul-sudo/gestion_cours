@@ -28,12 +28,12 @@
 					$_SESSION["status"] = $status;
 					header('Location: principale.php');
 				}else{ 
-					header('Location: /index.php?erreur=1'); 
+					header('Location: ../index.php?erreur=1'); 
 				}
 			}
  		}else{
- 			header('Location: /index.php?erreur=2'); // utilisateur ou mot de passe vide
+ 			header('Location: ../index.php?erreur=2'); // utilisateur ou mot de passe vide
  		}
  	}else{
- 		header('Location: /index.php');
+ 		header('Location: ../index.php');
  }

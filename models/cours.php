@@ -5,7 +5,7 @@
         public function getCours()
         {
             $bdd = $this -> dbConnect();
-            $sql = $bdd->prepare('SELECT id_cours, nom_cours, categorie.designation_cat, professeur.nom_professeur, professeur.prenom_professeur FROM cours JOIN categorie ON cours.id_cat=categorie.id_cat JOIN professeur ON cours.id_professeur=professeur.id_professeur');
+            $sql = $bdd->prepare('SELECT cours.id_cours, cours.nom_cours, categorie.designation_cat, professeur.nom_professeur, professeur.prenom_professeur FROM cours JOIN categorie ON cours.id_cat=categorie.id_cat JOIN professeur ON cours.id_professeur=professeur.id_professeur');
 
             $sql -> execute();
             $tab = $sql -> fetchall();
@@ -26,6 +26,16 @@
             $bdd= $this -> dbConnect();
             $sql = $bdd -> prepare ('UPDATE '.$status.' SET nom_'.$status.'= ?, id_cat=?, id_professeur= ? WHERE id_'.$status.'= ?');
             $sql -> execute(array($nom, $idCat, $idProf, $id));
+        }
+
+        public function getCoursid($idProf)
+        {
+            $bdd = $this -> dbConnect();
+            $sql = $bdd->prepare('SELECT cours.id_cours, cours.nom_cours, categorie.designation_cat, professeur.nom_professeur, professeur.prenom_professeur FROM cours JOIN categorie ON cours.id_cat=categorie.id_cat JOIN professeur ON cours.id_professeur=professeur.id_professeur WHERE professeur.id_professeur= ?');
+
+            $sql -> execute(array($idProf));
+            $tab = $sql -> fetchall();
+            return $tab;
         }
     }
 ?>

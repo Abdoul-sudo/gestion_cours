@@ -83,7 +83,6 @@
                 $nom = $value['nom_cours'];
             }
             require_once("views/admin/modifCours.php");// appelle le formulaire update pour y placer les placeholder
-
         }
 
         // sert à modifier un cours dans la liste des cours

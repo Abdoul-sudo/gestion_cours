@@ -47,7 +47,7 @@
                                     <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&modif='.$val['id_etudiant'].'">MODIFIER</a></div><br>
                                     <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&act='.$val['id_etudiant'].'">EFFACER</a></div>
                                 </td>';
-                            echo"</tr>";
+                        echo"</tr>";
                     }
                 }
             }

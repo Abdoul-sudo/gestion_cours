@@ -198,24 +198,40 @@
                 require_once("views/admin/listeProfesseur.php");
             }
 
-            elseif ($_GET["pgPublic"]=="messProf") {
-                if (!empty($_GET["pg"])) {
+            elseif ($_GET["pgPublic"]=="messProf") 
+            {
+                if (!empty($_GET["pg"])) 
+                {
                     if ($_GET["pg"]=="insMprof") {
-                        require_once("views/public/publication.php");
+                        if (!empty($_GET["id"])) {
+                            $idProf = $_GET["id"];
+                            require_once("controllers/publication.php");
+                            $m = new managePub;
+                            $mp = $m-> takeCoursPub($idProf);
+                        }
                     }
+                    elseif ($_GET["pg"]=="showMprof") 
+                    {
+                        if (!empty($_GET["pg1"])) 
+                        {
+                            if ($_GET["pg1"]=="choixCours") 
+                            {
+                                require_once("controllers/publication.php");
+                                $m = new managePub;
+                                $mp = $m-> takeCoursChoix();
+                            }
+                        }
+                        else 
+                        {
+                            if (!empty($_GET["pg2"])) 
+                            {
+                                $cours = $_GET["pg2"]; // id_cours 
+                                require_once("views/public/affichagePub.php");
+                            }
+                        }
+                        
+                    }    
                 }
             }
         }
     }
-
-    
-    
-    
-    
-
-    
-
-    
-    
-    
-?>

@@ -47,16 +47,16 @@
                     </li>
 
                     <?php if ($_SESSION['status'] == 'professeur'): ?> 
-                        <span>Publication</span>
                         <li class="menuPub">
+                            <span>Publication</span>
                             <ul class="submenu">
                                 <li><a href="admin.php?pgPublic=messProf&pg=insMprof&id=<?php echo $_SESSION['id']; ?>">Publier message</a></li>
                                 <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications</a></li>
                             </ul>
                         </li>
                     <?php elseif ($_SESSION['status'] == 'etudiant'): ?>
-                        <span>Publication</span>
                         <li class="menuPub">
+                            <span>Publication</span>
                             <ul class="submenu">
                                 <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications professeurs</a></li>
                             </ul>
@@ -88,16 +88,16 @@
                     </li>
 
                     <?php if ($_SESSION['status'] == 'professeur'): ?> 
-                        <span>Publication</span>
                         <li class="menuPub">
+                            <span>Publication</span>
                             <ul class="submenu">
                                 <li><a href="admin.php?pgPublic=messProf&pg=insMprof&id=<?php echo $_SESSION['id']; ?>">Publier message</a></li>
                                 <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications</a></li>
                             </ul>
                         </li>
                     <?php elseif ($_SESSION['status'] == 'etudiant'): ?>
-                        <span>Publication</span>
                         <li class="menuPub"> 
+                            <span>Publication</span>
                             <ul class="submenu">
                                 <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications professeurs</a></li>
                             </ul>

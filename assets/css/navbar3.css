@@ -1,0 +1,130 @@
+body{
+    font-family: 'Source code pro', Calibri, serif;
+    /* font-family: Impact, fantasy; */
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+nav{
+    width: 100%;
+    background-color: #424558;
+}
+
+nav > ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav > ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+nav > ul > li{
+    float: left;
+    position: relative;
+}
+
+nav >ul > li > a{
+    padding: 20px 30px;
+    color: #fff;
+}
+nav >ul > li > span{     /* span */
+    padding: 20px 30px;
+    color: #fff;
+}
+
+/* permet de garder la taille du menu, sans qu'elle ne bouge */
+nav > ul > li:hover a{
+    padding: 15px 30px 20px 30px;
+}
+nav > ul > li:hover span{
+    padding: 15px 30px 20px 30px;
+}
+nav li{
+    list-style-type: none;
+}
+
+.submenu{
+    display: none;
+}
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+}
+nav span{                /* span */
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* afficage sous menu */
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+
+.submenu li{
+    border-bottom: 1px solid #ccc;
+}
+
+.submenu li a{
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #222538;
+    width: 270px;
+}
+/* menu au survol de la souris */
+.menuAc:hover{
+    border-top: 5px solid #bbb;
+    background-color: RGBa(220, 220, 220, 0.15);
+}
+.menuIns:hover{
+    border-top: 5px solid #0070bb;
+    background-color: RGBa(000, 112, 192, 0.15);
+}
+.menuLi:hover{
+    border-top: 5px solid #f1dc4f;
+    background-color: RGBa(241, 211, 79, 0.15);
+}
+.menuDec:hover{
+    
+    border-top: 5px solid #e44d26;
+    background-color: RGBa(228, 77,38, 0.15);
+}
+
+/*submenu des menu */
+/* .menuAc .submenu{
+    background-color: RGB(230, 100, 40);
+} */
+.menuIns .submenu{
+    background-color: RGB(000, 160, 240);
+}
+.menuLi .submenu{
+    background-color: RGB(250, 215, 100);
+}
+
+/* couleur survol submenu */
+.submenu li:hover a{
+    color: #eee;
+    font-weight: bold;
+}
+/* .menuAc .submenu li:hover{
+    background-color: RGB(210, 77, 60);
+} */
+.menuIns .submenu li:hover{
+    background-color: RGB(000, 115, 200);
+}
+.menuLi .submenu li:hover{
+    background-color: RGB(200, 165, 75);
+}
+
+#logo{
+    margin-right: 100px;
+}

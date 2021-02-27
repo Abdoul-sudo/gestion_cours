@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/insert.css">
 </head>
 <body>
-        <form action="controllers/manageCours?action=insCours" method="post">
+        <?php require("views/admin/menuAdmin.php");?>
 
-            <label for="cours"> COURS</label>
-            <input type="text" name="cours" id="cours">
+        <form class="box" id="boxCours" action="controllers/manageCours?action=insCours" method="post">
 
-            <label>PROFESSEUR</label>
+            <h4 for="cours"> COURS</h4>
+            <input type="text" name="cours" id="cours" placeholder="Nom du cours" autocomplete="off" require>
+            
+            <h4>PROFESSEUR</h4>
             <select name="prof">
                 <?php foreach ($takeid as $key): ?>
                     <option value="<?= $key['id_professeur']; ?>">
@@ -21,14 +25,14 @@
             </select>
 
             <br><br>
-            <label>CATEGORIE</label>
+            <h4>CATEGORIE</h4>
             <select name="categorie">
                 <option value="1">Informatique</option>
                 <option value="2">Gestion</option>
                 <option value="3">Communication</option>
             </select>
 
-            <input type="submit" value="OK">
+            <input id="submitCours" type="submit" value="INSERER">
         </form>
         
 </body>

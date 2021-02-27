@@ -61,6 +61,7 @@
 
                 $user = new User;
                 $j = $user -> insCours($cours, $idCat, $idP);
+                header("Location:../admin.php?pgAdmin=pgCours&pg=listeCours");
 
             }
         }
@@ -112,7 +113,7 @@
         $action= $_GET["action"];
         if ($action == "insCours")  //$_GET["action"] provient de formulaireCours.php
         { 
-            $a= new ManageProfesseur;
+            $a= new ManageCours;
             $i=$a->insCoursC();
         }
     }

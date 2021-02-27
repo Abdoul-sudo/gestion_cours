@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,9 @@
     <?php 
         
         echo 'Bienvenue professeur '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';
+
+        echo '<img src="../../assets/images/etudiant/'. $_SESSION['image'].'" >';
+
         
     ?>
 </body>

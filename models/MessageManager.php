@@ -17,13 +17,15 @@
 				$q->execute(array('contenu_mess'=>$message->content(), 'id_exp'=>intval($message->sender()), 'id_dest'=>intval($tab[$i])));
 			}	
 		}
-		public function getReceivedMessages(Message $message)
+		public function getReceivedMessages($id)
 		{
+			if(!is_int($id)){ $id = intval($id);}
+
 			$db = $this->dbConnect();
 			$q = $db->prepare('
 				SELECT m.id_mess mId, m.contenu_mess content, DATE_FORMAT(m.date_mess, \'%d/%m/%Y %H:%i\') mDate,
 				m.id_etudiant idExp, e.prenom_etudiant prenomExp,
-				e.nom_etudiant nomExp, e.email_etudiant emailDest
+				e.nom_etudiant nomExp, e.email_etudiant emailExp
 				FROM message m
 				INNER JOIN recevoir r
 				INNER JOIN etudiant e
@@ -31,7 +33,8 @@
 				WHERE r.id_etudiant = ?
 				ORDER BY date_mess DESC
 			');
-			$q->execute(array(intval($message->recipient())));
+			//Par défaut d'absence de constructeur et d'hydratation dans la classe Message, on doit passer par une variable
+			$q->execute(array(intval($id)));
 			$data = $q->fetchall(PDO::FETCH_ASSOC);
 			return $data;
 		}
@@ -74,6 +77,6 @@
 				DELETE FROM recevoir
 				WHERE id_mess = ?
 				');
-			$q->execute(array(intval($message->id()), intval($message->id()));
+			$q->execute(array($message->id(), $message->id()));
 		}
 	}

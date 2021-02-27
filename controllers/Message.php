@@ -6,6 +6,7 @@
 		private $_seen;
 		private $_sender;
 		private $_recipient;
+		private $_rawData;
 		//On n'utilise ici ni de constructeur, ni de l'hydratation pour rester simple
 		//Accesseurs
 		public function id()
@@ -32,11 +33,15 @@
 		{
 			return $this->_recipient;
 		}
+		public function rawData()
+		{
+			return $this->_rawData;
+		}
 
 		//mutateurs
 		public function setId($id)
 		{
-			$this->_id = $id;
+			$this->_id = intval($id);
 		}
 		public function setContent($content)
 		{
@@ -52,10 +57,14 @@
 		}
 		public function setSender($sender)
 		{
-			$this->_sender = $sender;
+			$this->_sender = intval($sender);
 		}
 		public function setRecipient($recipient)
 		{
-			$this->_recipient = $recipient;
+			$this->_recipient = intval($recipient);
+		}
+		public function setRawData($data)
+		{
+			$this->_rawData = $data;
 		}
 	}

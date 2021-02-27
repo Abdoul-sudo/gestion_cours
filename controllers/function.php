@@ -9,6 +9,7 @@
 		$_SESSION["admin"] = $tab['admin'];
 		$_SESSION["loggedIn"] = true;
 	}
+	//en absence de constructeur ou d'hydratant dans les classes, on doit utiliser des fonctions pour utiliser la
 	function listPotentialRecipients(){
 		$db = new User;
 		$studentTab = $db->listUser('etudiant');
@@ -19,7 +20,20 @@
 		$data = $db->getReceivedMessages($_SESSION['id']);
 		return $data;
 	}
-	function deleteMessage(){
-
+	function listSentMessages(){
+		$db = new MessageManager;
+		$data = $db->getSentMessages($_SESSION['id']);
+		return $data;
+	}
+	function showSentMessage($id){
+		$db = new MessageManager;
+		$data = $db->getSentMessage($id);
+		return $data;
+	}
+	function showReceivedMessage($id){
+		$db = new MessageManager;
+		$data = $db->getReceivedMessage($id);
+		print_r($data);
+		return $data;
 	}
 

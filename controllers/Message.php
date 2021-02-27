@@ -61,7 +61,7 @@
 		}
 		public function setRecipient($recipient)
 		{
-			$this->_recipient = intval($recipient);
+			$this->_recipient = $recipient;
 		}
 		public function setRawData($data)
 		{

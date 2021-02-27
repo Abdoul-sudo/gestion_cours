@@ -13,20 +13,27 @@
 </head>
 <body>
 	<?php
-		$data = listReceivedMessages();
+		$data = listSentMessages();
 		for($i=0; $i<count($data); $i++){
 			?>
 			<div class="message">
 				<p class="header">
-					<span class="nom"><?=$data[$i]['prenomExp']?></span>
+					<span class="nom"><?=$data[$i]['prenomDest']?></span>
 					 <span class="date"><?=$data[$i]['mDate']?></span> 
-					 (<span class="email"><?=$data[$i]['emailExp']?></span>)
+					 (<span class="email"><?=$data[$i]['emailDest']?></span>)
 				</p>
-				<p class="contenu"><?=$data[$i]['content']?></p>
+
+				<p class="contenu"><?=nl2br($data[$i]['content'])?></p>
+
+				<form action="../../controllers/messageComputing.php" method="GET">
+					<input type="hidden" name="action" value="1">
+					<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
+					<input type="submit" value="Modifier">
+				</form>
 				<form action="../../controllers/messageComputing.php" method="GET">
 					<input type="hidden" name="action" value="3">
 					<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
-					<input type="submit" value="Transférer">
+					<input type="submit" value="Transferer">
 				</form>
 				<form action="../../controllers/messageComputing.php" method="GET">
 					<input type="hidden" name="action" value="2">

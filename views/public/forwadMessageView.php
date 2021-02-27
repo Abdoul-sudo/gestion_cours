@@ -1,7 +1,8 @@
 <?php
 	session_start();
-	require ('../../models/user.php');
-	require ('../../controllers/function.php');
+	require_once ('../../models/user.php');
+	require_once ('../../models/MessageManager.php');
+	require_once ('../../controllers/function.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,18 +19,20 @@
 			$studentTab = listPotentialRecipients();
 			$i = 1;
 			foreach ($studentTab as $val){
+				{
 				?>
-				<?php echo $val['id_etudiant']?>
-				<input type="checkbox" id=<?='email_'.$i?> name="recipient[]" value=<?php echo $val['id_etudiant']?>>
+				<input type="checkbox" id=<?='email_'.$i?> name="recipient[]" value=<?=$val['id_etudiant']?>>
 				<label for=<?='email_'.$i?>><?=ucfirst($val['prenom_etudiant'])?></label><br>           
 				<?php
+				}
 				$i++;
 			}
+			$message = showSentMessage($_GET['id']);
 		?>
 		<p><strong>Message :</strong></p>
-		<textarea name="message" id="message" cols="50" rows="10"></textarea><br>
-		<input type="hidden" name="send" value="1">
-		<input type="submit" value="Envoyer">
+		<textarea name="message" id="message" cols="50" rows="10" readonly><?= $message['content']?></textarea><br>
+		<input type="hidden" name="update" value="2">
+		<input type="submit" value="Transférer">
 	</form>	
 </body>
 </html>

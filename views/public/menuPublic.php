@@ -42,6 +42,16 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <?php if ($_SESSION['status'] == 'professeur'): ?> 
+                            <span>Publication</span>
+                            <ul>
+                                <li><a href="../../admin.php?pgPublic=messProf&pg=insMprof"></a></li>
+                                <li></li>
+                            </ul>
+                        <?php endif; ?>                        
+                    </li>
+
                     <li class="menuDec"><a href="../../controllers/logout.php">Deconnexion</a></li>
 
                 </ul>

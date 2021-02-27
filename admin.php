@@ -197,6 +197,14 @@
                 // liste professeur public (visionnage seulement)
                 require_once("views/admin/listeProfesseur.php");
             }
+
+            elseif ($_GET["pgPublic"]=="messProf") {
+                if (!empty($_GET["pg"])) {
+                    if ($_GET["pg"]=="insMprof") {
+                        require_once("views/public/publication.php");
+                    }
+                }
+            }
         }
     }
 

@@ -1,0 +1,7 @@
+body{
+    color: white;
+    background: linear-gradient(45deg, red, blue);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

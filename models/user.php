@@ -52,5 +52,21 @@
             $tab = $sql -> fetchall();
             return $tab;
         }
+
+        public function idUser($status, $nom, $prenom)
+        {
+            $bdd = $this -> dbConnect();
+            $req = $bdd -> prepare ('SELECT id_'.$status.' WHERE nom_'.$status.'= ? AND prenom_'.$status.'= ?');
+            $req -> execute(array($nom, $prenom));
+            $tbl = $req -> fetchall();
+            return $tbl;
+        }
+
+        public function insCours($nomCours, $idCat, $idP)
+        {
+            $bdd = $this -> dbConnect();
+            $ins = $bdd -> prepare ('INSERT INTO cours (nom_cours, id_cat, id_professeur) VALUES (?,?,?)');
+            $ins -> execute(array($nomCours, $idCat, $idP));
+        }
 	}
 	

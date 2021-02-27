@@ -20,21 +20,22 @@
 				header('Location: principale.php');
 			}
 			else{
-				// $status = 'professeur';
-				// $req = $user -> getUser($status, $email);
-				// $tab = $req->fetch();
+				$status = 'professeur';
+				$req = $user -> getUser($status, $email);
+				$tab = $req->fetch();
 
-				// if(count($tab)>0 && password_verify($password, $tab["mdp_$status"])){
-				// 	completeSession($tab, $status, $email);
-				// 	$_SESSION["status"] = $status;
-				// 	header('Location: principale.php');
-				// }else{ 
+				if(count($tab)>0 && password_verify($password, $tab["mdp_$status"])){
+					completeSession($tab, $status, $email);
+					$_SESSION["status"] = $status;
+					header('Location: principale.php');
+				}else{ 
 					header('Location: /index.php?erreur=1'); 
-				//}
+				}
+
 			}
  		}else{
- 			header('Location: /index.php?erreur=2'); // utilisateur ou mot de passe vide
+ 			header('Location: ../index.php?erreur=2'); // utilisateur ou mot de passe vide
  		}
  	}else{
- 		header('Location: /index.php');
+ 		header('Location: ../index.php');
  }

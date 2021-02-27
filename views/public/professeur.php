@@ -1,6 +1,5 @@
-<?php session_start();?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <a href="../../controllers/logout.php">Deconnexion</a><br> 
-        <?php 
-            if($_SESSION['admin']){
-                echo '<a href="../../admin.php?session=admin">Page d\'insertion</a>';
-            }
-        ?>
-    </nav>
+    <?php require("menuPublic.php"); ?>
+
 
     <?php 
         
         echo 'Bienvenue professeur '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';
+
+        echo '<img src="../../assets/images/etudiant/'. $_SESSION['image'].'" >';
+
         
     ?>
 </body>

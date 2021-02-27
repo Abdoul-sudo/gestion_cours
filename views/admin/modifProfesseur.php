@@ -8,7 +8,7 @@
 
     <body>
         <h1> FORMULAIRE D'UPDATE DU PROFESSEUR: <?php echo $nom;?></h1>
-        <form method="post" action="controllers/ManageProfesseur.php?update=update">
+        <form method="post" action="controllers/manageProfesseur.php?update=update">
             <div>
                 <input type="hidden" name="id" id="id" value="<?php echo $id;?>">
             </div>

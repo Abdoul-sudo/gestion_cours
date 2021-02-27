@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ListeEtudiants</title>
+
+    <link rel="stylesheet" href="assets/css/list.css">
 </head>
 <body>
-    <nav>  
-        <span><a href="admin.php?session=admin"> Accueil</a></span>  
-        <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
-        <span><a href="admin.php?pgAdmin=pgEt">Insertion Etudiant</a></span>
-        <span><a href="controllers/logout.php">Deconnexion</a></span>
-    </nav>
+    <?php require("views/admin/menuAdmin.php");?>
+
 
     <h1>LISTE DES ETUDIANTS</h1>
     <table>

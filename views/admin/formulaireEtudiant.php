@@ -4,51 +4,36 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulaire</title>
+
+        <link rel="stylesheet" href="assets/css/insert.css">
     </head>
 
     <body>
-        <nav>  
-            <span><a href="admin.php?session=admin"> Accueil</a></span>  
-            <span><a href="admin.php?pgAdmin=pgProf">Insertion professeur</a></span>
-            <span><a href="admin.php?pgAdmin=pgEt&pg=listeEt"> Liste des étudiants </a></span>
-            <span><a href="controllers/logout.php">Deconnexion</a></span>
-        </nav>
+        <?php require("views/admin/menuAdmin.php");?>
         
-        <h1> INSERTION ETUDIANT </h1>
-        <form method="post" action="controllers/manageEtudiant?action=insert">
-            <div>
-                <h4 for="nom">NOM</h4>
-                <input type="text" name="nom" id="nom">
-            </div>
+        <form class="box" method="post" action="controllers/manageEtudiant.php?action=insert"> 
+            <h1> INSERTION ETUDIANT </h1>
 
-            <div>
-                <h4 for="prenom">PRENOM</h4>
-                <input type="text" name="prenom" id="prenom">
-            </div>
+                <!-- Nom -->
+                <input type="text" name="nom" id="nom" placeholder="Nom de l'étudiant" autocomplete="off" require>
 
-            <div>
-                <h4 for="tel">NUMERO DE TELEPHONE</h4>
-                <input type="text" name="tel" id="tel">
-            </div>
+                <!-- Prénom -->
+                <input type="text" name="prenom" id="prenom" placeholder="Prénom de l'étudiant" autocomplete="off" require>
+            
+                <!-- Numero de telephone -->
+                <input type="text" name="tel" id="tel" placeholder="Numero de téléphone" autocomplete="off" require>
 
-            <div>
-                <h4 for="email">EMAIL</h4>
-                <input type="email" name="email" id=email>
-            </div>
+                <!-- Email -->
+                <input type="text" name="email" id=email placeholder="Email de l'étudiant" autocomplete="off" require>
 
-            <div>
-                <h4 for="mdp">MOT DE PASSE</h4>
-                <input type="password" name="mdp" id="mdp">
-            </div>
+                <!-- Password -->
+                <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" require>
 
-            <div>
                 <h4 for="img">INSERER IMAGE</h4>
-                <input type="file" accept="image/png, image/jpeg" name="img" id="img">
-            </div>
-
-            <div>
-                <input type="submit" value="OK">
-            </div>
+                <input type="file" accept="image/png, image/jpeg" name="img" id="img" require>
+            
+                <input type="submit" value="INSERER">
+            
         </form>
 
         

@@ -4,7 +4,7 @@
     {
         $page = $_GET["pgAdmin"];
         // si pgAdmin==pgEt pour les liens en haut
-        if ($page == "pgEt") 
+        if ($page == "pgEt")
         {
             /// On prend pg venant de : formulaireEtudiant.php
             /// si pg==VIDE, on affiche le formaulaire d'insertion des étudiants

@@ -16,7 +16,11 @@
         
             <nav>
                 <ul>
-                <li id="logo"><?php echo '<img src="assets/images/etudiant/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
+                <?php if ($_SESSION['status'] == 'professeur'): ?> 
+                    <li id="logo"><?php echo '<img src="assets/images/professeur/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
+                <?php elseif($_SESSION['status'] == 'etudiant'): ?>
+                    <li id="logo"><?php echo '<img src="assets/images/etudiant/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
+                <?php endif; ?> 
 
                 <?php if ($_SESSION['status'] == 'etudiant'): ?>
                     <li class="menuAc"><a href="views/public/etudiant.php">Accueil</a></li>
@@ -42,6 +46,23 @@
                         </ul>
                     </li>
 
+                    <?php if ($_SESSION['status'] == 'professeur'): ?> 
+                        <li class="menuPub">
+                            <span>Publication</span>
+                            <ul class="submenu">
+                                <li><a href="admin.php?pgPublic=messProf&pg=insMprof&id=<?php echo $_SESSION['id']; ?>">Publier message</a></li>
+                                <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications</a></li>
+                            </ul>
+                        </li>
+                    <?php elseif ($_SESSION['status'] == 'etudiant'): ?>
+                        <li class="menuPub">
+                            <span>Publication</span>
+                            <ul class="submenu">
+                                <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications professeurs</a></li>
+                            </ul>
+                        </li>
+                    <?php endif; ?> 
+
                     <li class="menuDec"><a href="controllers/logout.php">Deconnexion</a></li>
 
                 </ul>
@@ -50,7 +71,11 @@
     <?php else:?>
             <nav>
                 <ul>
-                    <li id="logo"><?php echo '<img src="assets/images/etudiant/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
+                    <?php if ($_SESSION['status'] == 'professeur'): ?> 
+                        <li id="logo"><?php echo '<img src="assets/images/professeur/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
+                    <?php elseif($_SESSION['status'] == 'etudiant'): ?>
+                        <li id="logo"><?php echo '<img src="assets/images/etudiant/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
+                    <?php endif; ?> 
 
                     <li class="menuLi">
                         <span>Liste</span>
@@ -58,8 +83,26 @@
                             <li><a href="admin.php?pgPublic=pgEtudiant"> Liste des étudiants </a></li>
                             <li><a href="admin.php?pgPublic=pgProfesseur"> Liste des professeurs </a></li>
                             <li><a href="admin.php?pgPublic=pgCours">Liste des cours</a></li>
+                            <li><a href="">Liste publication</a></li>
                         </ul>
                     </li>
+
+                    <?php if ($_SESSION['status'] == 'professeur'): ?> 
+                        <li class="menuPub">
+                            <span>Publication</span>
+                            <ul class="submenu">
+                                <li><a href="admin.php?pgPublic=messProf&pg=insMprof&id=<?php echo $_SESSION['id']; ?>">Publier message</a></li>
+                                <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications</a></li>
+                            </ul>
+                        </li>
+                    <?php elseif ($_SESSION['status'] == 'etudiant'): ?>
+                        <li class="menuPub"> 
+                            <span>Publication</span>
+                            <ul class="submenu">
+                                <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications professeurs</a></li>
+                            </ul>
+                        </li>
+                    <?php endif; ?> 
 
                     <li class="menuDec"><a href="controllers/logout.php">Deconnexion</a></li>
 

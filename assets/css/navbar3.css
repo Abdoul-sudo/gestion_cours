@@ -93,6 +93,11 @@ nav li:hover .submenu{
     border-top: 5px solid #f1dc4f;
     background-color: RGBa(241, 211, 79, 0.15);
 }
+.menuPub:hover{
+    
+    border-top: 5px solid #35B554;
+    background-color: RGBA(54,244,63,0.14);
+}
 .menuDec:hover{
     
     border-top: 5px solid #e44d26;
@@ -109,6 +114,9 @@ nav li:hover .submenu{
 .menuLi .submenu{
     background-color: RGB(250, 215, 100);
 }
+.menuPub .submenu{
+    background-color: RGB(53,181,84);
+}
 
 /* couleur survol submenu */
 .submenu li:hover a{
@@ -123,6 +131,9 @@ nav li:hover .submenu{
 }
 .menuLi .submenu li:hover{
     background-color: RGB(200, 165, 75);
+}
+.menuPub .submenu li:hover{
+    background-color: RGB(53,106,84);
 }
 
 #logo{

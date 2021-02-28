@@ -13,7 +13,7 @@
         <form class="box" action="controllers/manageCours?action=insCours" method="post">
 
             <h4 for="cours"> COURS</h4>
-            <input type="text" name="cours" id="cours" placeholder="Nom du cours" autocomplete="off" require>
+            <input type="text" name="cours" id="cours" placeholder="Nom du cours" autocomplete="off" required>
             
             <h4>PROFESSEUR</h4>
             <select name="prof">

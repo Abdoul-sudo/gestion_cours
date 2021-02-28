@@ -34,7 +34,11 @@
 	function showReceivedMessage($id){
 		$db = new MessageManager;
 		$data = $db->getReceivedMessage($id);
-		print_r($data);
+		return $data;
+	}
+	function showCoursesList($id){
+		$db = new Cours;
+		$data = $db->getCoursesList($id);
 		return $data;
 	}
 

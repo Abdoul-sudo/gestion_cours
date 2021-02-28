@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>modifCours</title>
+
+    <link rel="stylesheet" href="assets/css/insert.css">
 </head>
 <body>
-        <h1>MODIFICATION DU COURS <?php echo $nom; ?></h1>
-        <form action="controllers/manageCours?update=update" method="post">
+        <h1>MODIFICATION DU COURS:</h1><h1 class="aqua"> <?php echo $nom; ?></h1>
+        <form class="box" action="controllers/manageCours?update=update" method="post">
 
             <div>
                 <input type="hidden" name="id" id="id" value="<?php echo $id;?>">
             </div>
 
             <label for="cours"> COURS </label>
-            <input type="text" name="cours" id="cours" value="<?php echo $nom; ?>">
+            <input type="text" name="cours" id="cours" value="<?php echo $nom; ?>" required>
 
             <label>PROFESSEUR</label>
             <select name="prof">

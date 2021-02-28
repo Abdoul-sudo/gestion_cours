@@ -4,7 +4,7 @@
     {
         $page = $_GET["pgAdmin"];
         // si pgAdmin==pgEt pour les liens en haut
-        if ($page == "pgEt") 
+        if ($page == "pgEt")
         {
             /// On prend pg venant de : formulaireEtudiant.php
             /// si pg==VIDE, on affiche le formaulaire d'insertion des étudiants
@@ -225,8 +225,12 @@
                         {
                             if (!empty($_GET["pg2"])) 
                             {
-                                $cours = $_GET["pg2"]; // id_cours 
-                                require_once("views/public/affichagePub.php");
+                                $cours = $_GET["pg2"]; // id_cours
+                                if (!empty($_GET["type"])) {
+                                    $typePub = $_GET["type"]; 
+                                    require_once("views/public/affichagePub.php");
+
+                                } 
                             }
                         }
                         

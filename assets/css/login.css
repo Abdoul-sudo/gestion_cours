@@ -17,6 +17,7 @@ body{
     transform: translate(-50%, -50%);
     background-color: #191919;
     text-align: center;
+    opacity: 0.95;
 }
 
 .box h1{

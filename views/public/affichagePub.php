@@ -12,17 +12,14 @@
     <h1> PUBLICATIONS </h1>
     <table>
         <tr>
-            <th>COURS</th>
-            <th>PROFESSEUR</th>
-            <th>OBJET</th>
-            <th>CONTENU</th>
-            <th>DATE</th>
+            <th >COURS</th>
+            
         </tr>
 
         <?php 
             require("controllers/publication.php");
             $et = new managePub;
-            $list = $et -> afficherMessage($cours);  
+            $list = $et -> afficherMessage($cours,$typePub);  
         ?>  
     </table>
 </body>

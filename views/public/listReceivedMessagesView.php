@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	require_once('../../controllers/function.php');
 	require_once('../../models/MessageManager.php');
 ?>
@@ -13,6 +12,8 @@
 </head>
 <body>
 	<?php
+		require_once("menuPublic.php");
+
 		$data = listReceivedMessages();
 		for($i=0; $i<count($data); $i++){
 			?>

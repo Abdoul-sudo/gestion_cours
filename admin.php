@@ -226,11 +226,11 @@
                             if (!empty($_GET["pg2"])) 
                             {
                                 $cours = $_GET["pg2"]; // id_cours
-                                if (!empty($_GET["type"])) {
-                                    $typePub = $_GET["type"]; 
+                                // if (!empty($_GET["type"])) {
+                                //     $typePub = $_GET["type"]; 
                                     require_once("views/public/affichagePub.php");
 
-                                } 
+                                // } 
                             }
                         }
                         

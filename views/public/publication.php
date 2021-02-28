@@ -11,11 +11,11 @@
 
         <h1> PUBLICATION </h1>
         <form method="post" action="controllers/publication.php?action=inserer"> 
-            <select name="type_pub">
+            <!-- <select name="type_pub">
                 <option value="message">Message</option>
                 <option value="leçon">Leçon</option>
                 <option value="exercice">Exercice</option>
-            </select>
+            </select> -->
 
             <select name="cours">
                 <?php foreach ($cours as $key): ?>

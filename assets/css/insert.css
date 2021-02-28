@@ -102,7 +102,7 @@ select option{
     position: relative;
 }
 
-.box label, .box input[type = "checkox"]{
+.box label, .box input[type = "checkbox"]{
     color: white;
     font-weight: bolder;
     padding: 14px 40px;

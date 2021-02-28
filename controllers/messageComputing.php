@@ -15,7 +15,7 @@
 			$message->setId($_GET['id']);
 			$readyMessage = new MessageManager;
 			$readyMessage->deleteMessage($message);
-			header('Location: ../views/public/listReceivedMessagesView.php');
+			header('Location: ../views/public/listSentMessagesView.php');
 		}
 		elseif ($_GET['action']==3){
 			$message = new Message;
@@ -49,6 +49,8 @@
 			$readyMessage = new MessageManager;
 			$readyMessage->forwadMessage($message);
 		}
+		header("Location:../views/public/listSentMessagesView.php");
+
 
 	}
 	else{

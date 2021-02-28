@@ -22,11 +22,11 @@
                 $contenu = htmlspecialchars ($_POST['contenu']);
                 $id_prof = $_POST['id_prof'];
                 $cours = $_POST['cours'];
-                $typePub = $_POST['type_pub'];
+                //$typePub = $_POST['type_pub'];
                 $date = date ('y-m-d h:i:s', time());
 
                 $pub= new publicationCours;
-                $tab = $pub -> insertPublication($titre, intval($cours), intval($id_prof), $contenu, $date, $typePub);
+            $tab = $pub -> insertPublication($titre, intval($cours), intval($id_prof), $contenu, $date/*, $typePub*/);
                 header('location: ../admin.php?pgPublic=messProf&pg=showMprof&pg2='.$cours);
             }
         }
@@ -52,11 +52,11 @@
             }
         }
 
-        public function afficherMessage($cours, $typePub)
+        public function afficherMessage($cours/*, $typePub*/)
         {
             require_once ("models/publication.php");
             $pub = new publicationCours;
-            $toutPub = $pub->selectPublication($cours, $typePub);
+        $toutPub = $pub->selectPublication($cours/*, $typePub*/);
 
             foreach ($toutPub as $value) 
             {
@@ -68,8 +68,8 @@
                         echo '<td collspan="3">PROFESSEUR: '.$value['nom_professeur']."<td>";
                     echo "</tr>";
                     echo "<tr>";
-                        echo "<td>".$value['type_pub']."<td>";
-                        echo "<td>".$value['titre_pub']."<td>";
+                        /*echo "<td>".$value['type_pub']."<td>";*/
+                        echo '<td collspan="2">'.$value['titre_pub']."<td>";
                         echo "<td>".$value['date_pub']."<td>";
                     echo "</tr>";
                     echo "<tr>";
@@ -83,7 +83,7 @@
                 //     echo "<td>".$value['titre_pub']."</td>";
                 //     echo "<td>".$value['contenu_pub']."</td>";
                 //     echo "<td>".$value['date_pub']."</td>";
-                //     echo "<td>".$value['type_pub']."</td>";
+                //     //echo "<td>".$value['type_pub']."</td>";
                 // echo "</tr>";
             }
         }

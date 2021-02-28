@@ -11,15 +11,18 @@
     <?php require("views/admin/menuAdmin.php");?>
     <h1> PUBLICATIONS </h1>
     <table>
-        <tr>
-            <th >COURS</th>
-            
-        </tr>
+        <!-- <tr>
+            <th>COURS</th>
+            <th>PROFESSEUR</th>
+            <th>OBJET</th>
+            <th>CONTENU</th>
+            <th>DATE</th>
+        </tr> -->
 
         <?php 
             require("controllers/publication.php");
             $et = new managePub;
-            $list = $et -> afficherMessage($cours,$typePub);  
+            $list = $et -> afficherMessage($cours);  
         ?>  
     </table>
 </body>

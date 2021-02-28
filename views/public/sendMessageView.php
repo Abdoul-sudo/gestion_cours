@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	require ('../../models/user.php');
 	require ('../../controllers/function.php');
 ?>
@@ -9,11 +8,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Envoyer un message</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="../../assets/css/insert.css">
 </head>
 <body>
-	<form action="../../controllers/messageComputing.php" method="POST">	
-		<p><strong>Selectionnez le(s) destinataire(s):</strong></p>
+	<?php require_once("menuPublic.php");?>
+	<form class="box" action="../../controllers/messageComputing.php" method="POST">	
+		<h4>Selectionnez le(s) destinataire(s):</h4>
 		<?php 
 			$studentTab = listPotentialRecipients();
 			$i = 1;
@@ -25,7 +25,7 @@
 				$i++;
 			}
 		?>
-		<p><strong>Message :</strong></p>
+		<h4>Message :</h4>
 		<textarea name="message" id="message" cols="50" rows="10"></textarea><br>
 		<input type="hidden" name="send" value="1">
 		<input type="submit" value="Envoyer">

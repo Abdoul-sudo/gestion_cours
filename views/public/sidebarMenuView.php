@@ -21,7 +21,6 @@
         <button type="submit" name="pg2" value=<?=$courseTab[$i]['id_cours']?>>
         	<?=ucwords($courseTab[$i]['cours'])?>
         </button>
-        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
         </form>
         <?php
 		$i++;

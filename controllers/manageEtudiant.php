@@ -38,14 +38,14 @@
                     {
                         echo "<tr>";
                             echo "<td>".$val['id_etudiant']."</td>";
-                            echo "<td>".$val['nom_etudiant']."</td>";
-                            echo "<td>".$val['prenom_etudiant']."</td>";
+                            echo "<td>".strtoupper($val['nom_etudiant'])."</td>";
+                            echo "<td>".ucwords($val['prenom_etudiant'])."</td>";
                             echo "<td>".$val['email_etudiant']."</td>";
-                            echo "<td>".$val['tel_etudiant']."</td>";
+                            echo "<td>0".$val['tel_etudiant']."</td>";
                             echo "<td>".'<img src="assets/images/etudiant/'. $val['image_etudiant'] .'" height=100 width=100 >'."</td>";
                             echo '<td> 
-                                    <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&modif='.$val['id_etudiant'].'">MODIFIER</a></div><br>
-                                    <div><a href="admin.php?pgAdmin=pgEt&pg=listeEt&act='.$val['id_etudiant'].'">EFFACER</a></div>
+                                    <div><a class="btn" href="admin.php?pgAdmin=pgEt&pg=listeEt&modif='.$val['id_etudiant'].'">MODIFIER</a></div><br>
+                                    <div><a class="btn" href="admin.php?pgAdmin=pgEt&pg=listeEt&act='.$val['id_etudiant'].'">EFFACER</a></div>
                                 </td>';
                         echo"</tr>";
                     }
@@ -56,8 +56,8 @@
                 foreach ($listeEt as $val) 
                 {
                     echo "<tr>";
-                        echo "<td>".$val['id_etudiant']."</td>";
-                        echo "<td>".$val['nom_etudiant']."</td>";
+                        echo "<td>".strtoupper($val['id_etudiant'])."</td>";
+                        echo "<td>".ucwords($val['nom_etudiant'])."</td>";
                         echo "<td>".$val['prenom_etudiant']."</td>";
                         echo "<td>".$val['email_etudiant']."</td>";
                         echo "<td>".$val['tel_etudiant']."</td>";

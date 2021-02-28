@@ -9,15 +9,13 @@ body{
 }
 
 .box{
-    width: 300px;
+    width: 370px;
     padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
+    margin: 50px 50%;
     background-color: #040c22;
+    opacity: 0.9;
     text-align: center;
-    margin-top: 50%;
 }
 
 .box h1, .box h4{
@@ -88,10 +86,18 @@ select option{
     font-weight: bolder;
 }
 
-.box label, .box select{
+.div {
+    display: block;
+    padding-left: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.box label, .box input[type = "checkox"]{
     color: white;
     font-weight: bolder;
     padding: 14px 40px;
+    display: inline-block;
     
 }
 
@@ -110,9 +116,5 @@ select option{
 
 /* #################  COURS  ################# */
 #submitCours{
-    margin-top: 70px;
-}
-
-#boxCours{
-    margin-top: 5%;
+    margin-top: 60px;
 }

@@ -16,12 +16,12 @@
                     foreach ($listeCours as $value) 
                     {
                         echo "<tr>";
-                            echo "<td>".$value['nom_cours']."</td>";
-                            echo "<td>".$value['nom_professeur'].' '.$value['prenom_professeur']."</td>";
+                            echo "<td>".strtoupper($value['nom_cours'])."</td>";
+                            echo "<td>".ucwords($value['nom_professeur']).' '.$value['prenom_professeur']."</td>";
                             echo "<td>".$value['designation_cat']."</td>";
                             echo '<td> 
-                            <div><a href="admin.php?pgAdmin=pgCours&pg=listeCours&modif='.$value['id_cours'].'">MODIFIER</a></div><br>
-                            <div><a href="admin.php?pgAdmin=pgCours&pg=listeCours&act='.$value['id_cours'].'">EFFACER</a></div>
+                            <div><a class="btn" href="admin.php?pgAdmin=pgCours&pg=listeCours&modif='.$value['id_cours'].'">MODIFIER</a></div><br>
+                            <div><a class="btn" href="admin.php?pgAdmin=pgCours&pg=listeCours&act='.$value['id_cours'].'">EFFACER</a></div>
                           </td>';
                         echo"</tr>";
                     }
@@ -33,8 +33,8 @@
                 foreach ($listeCours as $value) 
                     {
                     echo "<tr>";
-                        echo "<td>".$value['nom_cours']."</td>";
-                        echo "<td>".$value['nom_professeur']."</td>";
+                        echo "<td>".strtoupper($value['nom_cours'])."</td>";
+                        echo "<td>".ucwords($value['nom_professeur'])."</td>";
                         echo "<td>".$value['designation_cat']."</td>";
                     echo"</tr>";
                     }

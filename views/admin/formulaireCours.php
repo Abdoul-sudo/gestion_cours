@@ -10,7 +10,7 @@
 <body>
         <?php require("views/admin/menuAdmin.php");?>
 
-        <form class="box" id="boxCours" action="controllers/manageCours?action=insCours" method="post">
+        <form class="box" action="controllers/manageCours?action=insCours" method="post">
 
             <h4 for="cours"> COURS</h4>
             <input type="text" name="cours" id="cours" placeholder="Nom du cours" autocomplete="off" require>
@@ -30,7 +30,7 @@
                 <option value="1">Informatique</option>
                 <option value="2">Gestion</option>
                 <option value="3">Communication</option>
-            </select>
+            </select> <br>
 
             <?php require_once("views/public/selectStudentView.php"); ?> 
             

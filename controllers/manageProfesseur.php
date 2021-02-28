@@ -39,14 +39,14 @@
                     {
                         echo "<tr>";
                             echo "<td>".$val['id_professeur']."</td>";
-                            echo "<td>".$val['nom_professeur']."</td>";
-                            echo "<td>".$val['prenom_professeur']."</td>";
+                            echo "<td>".strtoupper($val['nom_professeur'])."</td>";
+                            echo "<td>".ucwords($val['prenom_professeur'])."</td>";
                             echo "<td>".$val['email_professeur']."</td>";
                             echo "<td>".$val['tel_professeur']."</td>";
                             echo "<td>".'<img src="assets/images/professeur/'. $val['image_professeur'] .'" height=100 width=100 >'."</td>";
                             echo '<td> 
-                                    <div><a href="admin.php?pgAdmin=pgProf&pg=listeProf&modif='.$val['id_professeur'].'">MODIFIER</a></div><br>
-                                    <div><a href="admin.php?pgAdmin=pgProf&pg=listeProf&act='.$val['id_professeur'].'">EFFACER</a></div>
+                                    <div><a class="btn" href="admin.php?pgAdmin=pgProf&pg=listeProf&modif='.$val['id_professeur'].'">MODIFIER</a></div><br>
+                                    <div><a class="btn" href="admin.php?pgAdmin=pgProf&pg=listeProf&act='.$val['id_professeur'].'">EFFACER</a></div>
                                 </td>';
                         echo"</tr>";
                     }
@@ -57,8 +57,8 @@
                     {
                         echo "<tr>";
                             echo "<td>".$val['id_professeur']."</td>";
-                            echo "<td>".$val['nom_professeur']."</td>";
-                            echo "<td>".$val['prenom_professeur']."</td>";
+                            echo "<td>".strtoupper($val['nom_professeur'])."</td>";
+                            echo "<td>".ucwords($val['prenom_professeur'])."</td>";
                             echo "<td>".$val['email_professeur']."</td>";
                             echo "<td>".$val['tel_professeur']."</td>";
                             echo "<td>".'<img src="assets/images/professeur/'. $val['image_professeur'] .'" height=100 width=100 >'."</td>";

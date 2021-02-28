@@ -2,31 +2,10 @@ body{
     padding: 0;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-table{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    border-collapse: collapse;
-    width: 800px;
-    height: 200px;
-    border: 1px solid #bdc3c7;
-    box-shadow:2px 2px 12px rgba(0,0,0,0,2), -1px -1px 8px rgba(0,0,0,0,2);
-}
-tr{
-    transition: all .2s ease-in;
-    cursor: pointer;
-}
-th,td{
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd ;
-
-}
-#header{
-    background-color:#16a085;
-    color: #fff;
+    background-image: url("../images/space/6.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 h1{
     font-weight: 600;
@@ -34,11 +13,71 @@ h1{
     background-color: #16a085;
     color:#fff;
     padding: 10px 0px;
+    margin: 0;
 
 }
-
-tr:hover{
-    background-color: #f5f5f5;
-    transform: scale(1.02);
+table{
+    /* position: absolute;
+    left: 50%;
+    top: 50%; */
+    border-radius: 1em;
+    color: white;
+    background: #33343b;
+    opacity: 0.95;
+    margin: 5% 50%;
+    transform: translate(-50%);
+    border-collapse: collapse;
+    width: 800px;
+    /* height: 200px; */
+    /* border: 1px solid #bdc3c7; */
     box-shadow:2px 2px 12px rgba(0,0,0,0,2), -1px -1px 8px rgba(0,0,0,0,2);
 }
+tr{
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+th,td{
+    padding: 12px;
+    text-align: left;
+
+}
+th{
+    border-bottom: 1px solid #ddd ;
+    color: aqua;
+}
+td{
+    border-top: 1px solid #ddd;
+}
+#header{
+    background-color:#16a085;
+    color: #fff;
+}
+
+
+tr:hover{
+    cursor: default;
+    background-color: rgba(34, 31, 31, 0.74);
+    color: white;
+    font-weight: 600;
+    transform: scale(1.01);
+    box-shadow:2px 2px 12px rgba(0,0,0,0,2), -1px -1px 8px rgba(0,0,0,0,2);
+}
+/* tr:hover td{
+    border-right: 0.1px solid rgb(255, 0, 0);
+} */
+
+.btn{
+    text-decoration: none;
+    color: yellow;
+    padding: 4px 10px;
+    border: 1px groove aqua;
+    border-radius: 1em;
+    cursor: pointer;
+    text-align: center;
+}
+.btn:hover{
+    color: aqua;
+    border: 1px groove yellow;
+    /* padding: 8px 15px; */
+}
+

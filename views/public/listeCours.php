@@ -16,7 +16,7 @@
         <tr>
             <th>COURS</th>
             <th>ENSEIGNANT DU COURS</th>
-            <th>CATEGORIE</th>
+            <th colspan="2">CATEGORIE</th>
         </tr>
 
 

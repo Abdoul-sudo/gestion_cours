@@ -37,5 +37,6 @@
             $tab = $sql -> fetchall();
             return $tab;
         }
+
     }
 ?>

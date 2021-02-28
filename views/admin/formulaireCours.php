@@ -32,6 +32,8 @@
                 <option value="3">Communication</option>
             </select>
 
+            <?php require_once("views/public/selectStudentView.php"); ?> 
+            
             <input id="submitCours" type="submit" value="INSERER">
         </form>
         

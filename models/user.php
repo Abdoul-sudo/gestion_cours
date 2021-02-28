@@ -62,11 +62,22 @@
             return $tbl;
         }
 
-        public function insCours($nomCours, $idCat, $idP)
+        public function insCours($nomCours, $idCat, $idP, Message $message)
         {
             $bdd = $this -> dbConnect();
-            $ins = $bdd -> prepare ('INSERT INTO cours (nom_cours, id_cat, id_professeur) VALUES (?,?,?)');
+            $ins = $bdd -> prepare ('
+                    INSERT INTO cours (nom_cours, id_cat, id_professeur) 
+                    VALUES (?,?,?);
+                    ');
             $ins -> execute(array($nomCours, $idCat, $idP));
+            $tab = $message->recipient();
+			for($i=0; $i<count($tab); $i++){
+				$q = $bdd->prepare('
+				INSERT INTO apprendre(id_etudiant, id_cours)
+				VALUES(:id_etudiant, LAST_INSERT_ID())
+				');
+				$q->execute(array('id_etudiant'=>intval($tab[$i])));
+			}	
         }
 	}
 	

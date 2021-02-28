@@ -94,9 +94,12 @@ nav li:hover .submenu{
     background-color: RGBa(241, 211, 79, 0.15);
 }
 .menuPub:hover{
-    
     border-top: 5px solid #35B554;
     background-color: RGBA(54,244,63,0.14);
+}
+.menuMess:hover{
+    border-top: 5px solid #be2edd;
+    background-color: RGBA(125,93,148,0.15);
 }
 .menuDec:hover{
     
@@ -109,13 +112,16 @@ nav li:hover .submenu{
     background-color: RGB(230, 100, 40);
 } */
 .menuIns .submenu{
-    background-color: RGB(000, 160, 240);
+    background-color: #5f7ed3;
 }
 .menuLi .submenu{
     background-color: RGB(250, 215, 100);
 }
 .menuPub .submenu{
     background-color: RGB(53,181,84);
+}
+.menuMess .submenu{
+    background-color: #a55eea;
 }
 
 /* couleur survol submenu */
@@ -127,13 +133,16 @@ nav li:hover .submenu{
     background-color: RGB(210, 77, 60);
 } */
 .menuIns .submenu li:hover{
-    background-color: RGB(000, 115, 200);
+    background-color: #192a56;
 }
 .menuLi .submenu li:hover{
     background-color: RGB(200, 165, 75);
 }
 .menuPub .submenu li:hover{
     background-color: RGB(53,106,84);
+}
+.menuMess .submenu li:hover{
+    background-color: RGB(116,72,140);
 }
 
 #logo{

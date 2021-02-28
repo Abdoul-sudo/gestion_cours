@@ -53,19 +53,37 @@
         // insertion cours   // appelée en bas de ce fichier
         public function insCoursC()  
         {
+            require_once('Message.php');
             require_once("../models/user.php");
             if (isset($_POST['cours']) && isset($_POST['prof']) && isset($_POST['categorie'])) {
                 $cours = $_POST['cours'];
                 $idP = $_POST['prof'];
                 $idCat = $_POST['categorie'];
+                $idEt = $_POST['recipient'];
+
+                $message = new Message;
+                $message->setRecipient($idEt);
 
                 $user = new User;
-                $j = $user -> insCours($cours, $idCat, $idP);
+                $j = $user -> insCours($cours, $idCat, $idP, $message);
                 header("Location:../admin.php?pgAdmin=pgCours&pg=listeCours");
 
             }
         }
-
+        
+        public function insStudentinCours()
+        {
+            $tab = $message->recipient();
+			for($i=0; $i<count($tab); $i++){
+				$q = $db->prepare('
+				INSERT INTO message(date_mess, contenu_mess, id_etudiant)
+				VALUES(NOW(), :contenu_mess, :id_exp);				
+				INSERT INTO recevoir(id_etudiant, id_mess)
+				VALUES(:id_dest, LAST_INSERT_ID())
+				');
+				$q->execute(array('contenu_mess'=>$message->content(), 'id_exp'=>intval($message->sender()), 'id_dest'=>intval($tab[$i])));
+			}	
+        }
         // sert à SELECT la ligne qu'on veut modifier  
         // appelée dans admin.php
         public function takeCours($id) 

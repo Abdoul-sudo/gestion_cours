@@ -21,14 +21,14 @@
         {
             $db = $this->dbConnect();
             $q = $db->prepare('
-                    SELECT cat.id_cat, cat.designation_cat categorie, c.id_cours, c.nom_cours cours
-                    FROM categorie cat
-                    JOIN cours c
-                    JOIN apprendre a
-                    JOIN etudiant e
-                    ON c.id_cours = cat.id_cat 
-                    AND a.id_cours = c.id_cours
-                    AND e.id_etudiant = a.id_etudiant
+                    SELECT cat.id_cat, cat.designation_cat categorie, c.id_cours,
+                    c.nom_cours cours FROM categorie cat 
+                    JOIN cours c 
+                    JOIN apprendre a 
+                    JOIN etudiant e 
+                    ON c.id_cat = cat.id_cat 
+                    AND a.id_cours = c.id_cours 
+                    AND e.id_etudiant = a.id_etudiant 
                     WHERE e.id_etudiant = ?
                 ');
             $q->execute(array($id));

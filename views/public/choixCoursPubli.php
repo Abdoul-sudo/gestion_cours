@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +9,6 @@
 </head>
 <body>
     <h3> Choisissez le cours auquel vous voulez voir les publications</h3>
-
-    <form method="post" action="controllers/publication.php?action=getidCours"> 
-        <select name="cours">
-            <?php foreach ($cours as $key): ?>
-                <option value=<?= $key['id_cours']?>>
-                    <?= $key['nom_cours']; ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-
-        <input type="submit" value="OK">
-    </form>
+    <?php require('sidebarMenuView.php') ?>
 </body>
 </html>

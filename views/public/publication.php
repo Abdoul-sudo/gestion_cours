@@ -18,7 +18,6 @@
                     </option>
                 <?php endforeach; ?>
             </select>
-
             <div>
                 <input type="hidden" name="id_prof" id="id_prof" value="<?php echo $_SESSION['id'];?>">
             </div>

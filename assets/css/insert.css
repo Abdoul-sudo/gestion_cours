@@ -65,21 +65,7 @@ body{
 }
 
 select option{
-    border: 0;
     color: black;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #fa9e48;
-    padding: 14px 10px;
-    width: 200px;
-    outline: none;
-    transition: 0.25s;
-}
-select option:focus{
-    width: 280px;
-    border-color: #7efff5;
 }
 
 .box input[type = "submit"]{
@@ -96,11 +82,17 @@ select option:focus{
     transition: 0.25s;
     cursor: pointer;
 }
-
 .box input[type = "submit"]:hover{
     background-color: #ffd32a;
     color: #130f40;
     font-weight: bolder;
+}
+
+.box label, .box select{
+    color: white;
+    font-weight: bolder;
+    padding: 14px 40px;
+    
 }
 
 

@@ -24,7 +24,7 @@
                 <?php endforeach; ?>
             </select>
 
-            <br><br>
+            <br>
             <h4>CATEGORIE</h4>
             <select name="categorie">
                 <option value="1">Informatique</option>

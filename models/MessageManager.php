@@ -114,14 +114,17 @@
 		public function updateMessage(Message $message)
 		{
 			$db = $this->dbConnect();
-			$q = $db->prepare('
-				UPDATE message
-				SET contenu_mess = :contenu_mess, date_mess = NOW()
-				WHERE id_mess = :id_mess
-				');
-			// $q->bindValue(':contenu_mess', $message->content());
-			// $q->bindValue(':id_mess', intval($message->id()));
-			$q->execute(array('contenu_mess'=>$message->content(), 'id_mess'=>intval($message->id())));
+			// $tab = $message->recipient();
+			// for($i=0; $i<count($tab); $i++){
+				$q = $db->prepare('
+					UPDATE message
+					SET contenu_mess = :contenu_mess, date_mess = NOW()
+					WHERE id_mess = :id_mess
+					');
+				// $q->bindValue(':contenu_mess', $message->content());
+				// $q->bindValue(':id_mess', intval($message->id()));
+				$q->execute(array('contenu_mess'=>$message->content(), 'id_mess'=>intval($message->id())));
+			//}
 		}
 		//suppression d'un message
 		public function deleteMessage(Message $message)

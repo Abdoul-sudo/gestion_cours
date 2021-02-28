@@ -30,7 +30,9 @@
 			$message = showReceivedMessage(intval($_GET['id']));
 		?>
 		<p><strong>Message :</strong></p>
-		<textarea name="message" id="message" cols="50" rows="10"><?= $message['content']?></textarea><br>
+		<textarea name="message" id="message" cols="50" rows="10"><?= $message['content']?></textarea>
+		<br>
+		<input type="hidden" name="id" value=<?=$_GET['id']?>>
 		<input type="hidden" name="update" value="1">
 		<input type="submit" value="Modifier">
 	</form>	

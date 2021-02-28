@@ -7,6 +7,7 @@
 		$_SESSION["telephone"] = $tab['tel_'.$person];
 		$_SESSION["image"] = $tab['image_'.$person];
 		$_SESSION["admin"] = $tab['admin'];
+		$_SESSION["status"] = $person;
 		$_SESSION["loggedIn"] = true;
 	}
 	//en absence de constructeur ou d'hydratant dans les classes, on doit utiliser des fonctions pour utiliser la

@@ -31,7 +31,7 @@
         {
             $bdd = $this -> dbConnect();
             $sql = $bdd -> prepare ('SELECT id_'.$status.', nom_'.$status.', prenom_'.$status.', email_'.$status.', tel_'.$status.', image_'.$status.' FROM '.$status );
-            $sql -> execute(); 
+            $sql -> execute();
             $tab = $sql -> fetchall();
             return $tab;
         }

@@ -19,12 +19,11 @@
 
             <select name="cours">
                 <?php foreach ($cours as $key): ?>
-                    <option value=<?= $key['id_cours']?>>
+                    <option value=<?= $key['id_cours'];?>>
                         <?= $key['nom_cours']; ?>
                     </option>
                 <?php endforeach; ?>
             </select>
-
             <div>
                 <input type="hidden" name="id_prof" id="id_prof" value="<?php echo $_SESSION['id'];?>">
             </div>

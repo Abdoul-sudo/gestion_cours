@@ -86,6 +86,12 @@
                         <li id="logo"><?php echo '<img src="assets/images/etudiant/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>
                     <?php endif; ?> 
 
+                    <?php if ($_SESSION['status'] == 'etudiant'): ?>
+                        <li class="menuAc"><a href="views/public/etudiant.php">Accueil</a></li>
+                    <?php elseif ($_SESSION['status'] == 'professeur'): ?> 
+                        <li class="menuAc"><a href="views/public/professeur.php">Accueil</a></li>
+                    <?php endif; ?>
+
                     <li class="menuLi">
                         <span>Liste</span>
                         <ul class="submenu">

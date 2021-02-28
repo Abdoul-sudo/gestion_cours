@@ -8,8 +8,9 @@
 </head>
 <body>
     <?php require("menuPublic.php"); ?>
+    <?php require("sidebarMenuView.php")?>
 
-    <?php    
+    <?php
         echo 'Bienvenue étudiant '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';    
 
     ?>

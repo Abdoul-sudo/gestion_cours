@@ -8,7 +8,7 @@
     <body>
         <div id="container">          
             <form class="box" action="controllers/verification.php" method="POST">
-                <h1>Login</h1>                
+                <h1>Login</h1>              
                 <input type="text" placeholder="Entrer l'email d'utilisateur" name="email" autocomplete="off" required>
                 <input type="password" placeholder="Entrer le mot de passe" name="password" required>
                 <input type="submit" id='submit' value='LOGIN' >

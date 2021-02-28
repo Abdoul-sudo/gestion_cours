@@ -61,6 +61,15 @@
                                 <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications professeurs</a></li>
                             </ul>
                         </li>
+
+                        <li>
+                            <span>Message</span>
+                                <ul>
+                                    <li><a href="views/public/sendMessageView.php">Nouveau Message</a></li>
+                                    <li><a href="views/public/listReceivedMessagesView.php">Boîte de réception</a></li>
+                                    <li><a href="views/public/listSentMessagesView.php">Boîte d'envoi</a></li>
+                                </ul>
+                        </li>
                     <?php endif; ?> 
 
                     <li class="menuDec"><a href="controllers/logout.php">Deconnexion</a></li>
@@ -101,6 +110,14 @@
                             <ul class="submenu">
                                 <li><a href="admin.php?pgPublic=messProf&pg=showMprof&pg1=choixCours">Publications professeurs</a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <span>Message</span>
+                                <ul>
+                                    <li><a href="views/public/sendMessageView.php">Nouveau Message</a></li>
+                                    <li><a href="views/public/listReceivedMessagesView.php">Boîte de réception</a></li>
+                                    <li><a href="views/public/listSentMessagesView.php">Boîte d'envoi</a></li>
+                                </ul>
                         </li>
                     <?php endif; ?> 
 

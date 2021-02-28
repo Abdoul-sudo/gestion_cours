@@ -1,11 +1,18 @@
-<div class="cours">
 
 <?php
-	require_once('controllers/function.php');
-	require_once('models/cours.php');
+	if (!empty($_GET["pgPublic"])) {
+        require_once('controllers/function.php');
+	    require_once('models/cours.php');
+    }
+    else {
+        
+        require_once('../../controllers/function.php');
+	    require_once('../../models/cours.php');
+    }
 
 	$courseTab = showCoursesList(intval($_SESSION['id']));
 	$i = 0;
+
     foreach ($courseTab as $val){
         ?>
         <form method="GET" action="../../admin.php">
@@ -14,11 +21,13 @@
         <button type="submit" name="pg2" value=<?=$courseTab[$i]['id_cours']?>>
         	<?=ucwords($courseTab[$i]['cours'])?>
         </button>
+        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
         </form>
         <?php
 		$i++;
     }
+
+    
 ?>	
-</div>
 
 

@@ -1,6 +1,10 @@
 ##################   LOGIN  ##################
 Le login permet de voir si une personne est admin ou non
 
+Pour se connecter:
+    -COMPTE ADMIN: 
+    -COMPTE PUBLIC: 
+
 ##################   GESTION D'ACCES  ##################
 Si l'utilisateur est admin:
     - il y aura les liens d'insertion (étudiant, cours , professeur)

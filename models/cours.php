@@ -35,6 +35,7 @@
             $tab = $q->fetchall(PDO::FETCH_ASSOC);
             return $tab;
         }
+        
         public function takeCours($status, $id)
         {
             $bdd = $this -> dbConnect();

@@ -18,9 +18,10 @@ h1{
 }
 
 .box{
-    width: 370px;
+    width: 35%;
     padding: 40px;
-    transform: translate(-50%);
+
+    transform: translate(-50%, 5%);
     margin: 50px 50%;
     background-color: #040c22;
     opacity: 0.9;

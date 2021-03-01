@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php require("menuPublic.php"); ?>
-    <?php require("sidebarMenuView.php")?>
+    <?php include("sidebarMenuView.php")?>
 
     <h1 id="h1">
         <?php

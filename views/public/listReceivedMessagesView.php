@@ -14,33 +14,38 @@
 <body>
 	<?php
 		require_once("menuPublic.php");
-
-		$data = listReceivedMessages();
-		for($i=0; $i<count($data); $i++){
-			?>
-			<div class="message">
-				<p class="header">
-					<span class="nom"><?=$data[$i]['prenomExp']?></span>
-					 <span class="date"><?=$data[$i]['mDate']?></span> 
-					 (<span class="email"><?=$data[$i]['emailExp']?></span>)
-				</p>
-				<p class="contenu"><?=$data[$i]['content']?></p>
-				<div class="div">
-					<form action="../../controllers/messageComputing.php" method="GET">
-						<input type="hidden" name="action" value="3">
-						<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
-						<input class="btn" type="submit" value="Transférer">
-					</form>
-					<form action="../../controllers/messageComputing.php" method="GET">
-						<input type="hidden" name="action" value="2">
-						<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
-						<input class="btn" type="submit" value="Supprimer">
-					</form>
-				</div>
-			</div><br><br>
-			<?php
-		}
+		
 	?>
+	<section class="container">
+		<?php
+			$data = listReceivedMessages();
+			for($i=0; $i<count($data); $i++){
+				?>
+				<div class="message">
+					<p class="header">
+						<span class="nom"><?=$data[$i]['prenomExp']?></span>
+						 <span class="date"><?=$data[$i]['mDate']?></span> 
+						 (<span class="email"><?=$data[$i]['emailExp']?></span>)
+					</p>
+					<p class="contenu"><?=$data[$i]['content']?></p>
+					<div class="div">
+						<form action="../../controllers/messageComputing.php" method="GET">
+							<input type="hidden" name="action" value="3">
+							<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
+							<input class="btn" type="submit" value="Transférer">
+						</form>
+						<form action="../../controllers/messageComputing.php" method="GET">
+							<input type="hidden" name="action" value="2">
+							<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
+							<input class="btn" type="submit" value="Supprimer">
+						</form>
+					</div>
+				</div><br><br>
+				<?php
+			}
+		?>
+		
+	</section>
 </body>
 </html>
 

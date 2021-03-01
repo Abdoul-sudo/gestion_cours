@@ -1,7 +1,7 @@
 ###   LOGIN  ###
 Le login permet de voir si une personne est admin ou non
 
-Pour se connecter:
+Pour se connecter, veuillez d'abord configurer le fichier models/connect.php avec vos identifiants:
 ------------------
     **ETUDIANT**:
         -COMPTE ADMIN: 

@@ -1,0 +1,101 @@
+body{
+    font-family: 'Source code pro', Calibri, serif;
+    /* font-family: Impact, fantasy; */
+    /* margin: 0px;
+    padding: 0px; */
+    
+ }
+
+#nav{
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 10;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    opacity: 0.95;
+    font-size: 0.65em;
+    list-style: none;
+    /* background-color: #424558; */
+}
+nav{
+    display: block;
+    background-color: black;
+}
+
+/* nav > ul{
+    margin: 0px;
+    padding: 0px;
+}  */
+#nav button {
+    margin: 8px 8px;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+#nav button:hover {
+    /* border-left: 5px solid #bbb;
+    background-color: RGBa(220, 220, 220, 0.15); */
+    color: aqua;
+    shadow: aquamarine;
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+  
+
+nav > ul::after{
+    content: "";
+    display: block;
+    clear: both;
+} 
+
+nav > ul > li{
+    float: none;
+    position: relative;
+}
+
+nav li{
+    list-style-type: none; 
+}
+
+
+/*
+ menu au survol de la souris */
+ .menuAc:hover{
+    border-top: 5px solid #bbb;
+    background-color: RGBa(220, 220, 220, 0.15);
+}
+.menuIns:hover{
+    border-top: 5px solid #0070bb;
+    background-color: RGBa(000, 112, 192, 0.15);
+}
+.menuLi:hover{
+    border-top: 5px solid #f1dc4f;
+    background-color: RGBa(241, 211, 79, 0.15);
+}
+.menuPub:hover{
+    border-top: 5px solid #35B554;
+    background-color: RGBA(54,244,63,0.14);
+}
+.menuMess:hover{
+    border-top: 5px solid #be2edd;
+    background-color: RGBA(125,93,148,0.15);
+}
+.menuDec:hover{
+    
+    border-top: 5px solid #e44d26;
+    background-color: RGBa(228, 77,38, 0.15);
+} 
+
+#h1{
+    text-align: center;
+    margin-top: 50%;
+}

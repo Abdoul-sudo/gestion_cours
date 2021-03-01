@@ -6,44 +6,44 @@ body{
     
 }
 
-nav{
+.nav{
     width: 100%;
     background-color: #424558;
 }
 
-nav > ul{
+.nav > ul{
     margin: 0px;
     padding: 0px;
 }
 
-nav > ul::after{
+.nav > ul::after{
     content: "";
     display: block;
     clear: both;
 }
 
-nav > ul > li{
+.nav > ul > li{
     float: left;
     position: relative;
 }
 
-nav >ul > li > a{
+.nav >ul > li > a{
     padding: 20px 30px;
     color: #fff;
 }
-nav >ul > li > span{     /* span */
+.nav >ul > li > span{     /* span */
     padding: 20px 30px;
     color: #fff;
 }
 
 /* permet de garder la taille du menu, sans qu'elle ne bouge */
-nav > ul > li:hover a{
+.nav > ul > li:hover a{
     padding: 15px 30px 20px 30px;
 }
-nav > ul > li:hover span{
+.nav > ul > li:hover span{
     padding: 15px 30px 20px 30px;
 }
-nav li{
+.nav li{
     list-style-type: none;
 }
 
@@ -51,17 +51,17 @@ nav li{
     display: none;
 }
 
-nav a{
+.nav a{
     display: inline-block;
     text-decoration: none;
 }
-nav span{                /* span */
+.nav span{                /* span */
     display: inline-block;
     text-decoration: none;
 }
 
 /* afficage sous menu */
-nav li:hover .submenu{
+.nav li:hover .submenu{
     display: inline-block;
     position: absolute;
     top: 100%;

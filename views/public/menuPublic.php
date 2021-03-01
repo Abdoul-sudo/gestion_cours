@@ -13,7 +13,7 @@
 <body>
     <?php if ($_SESSION["admin"]): ?>
         
-            <nav>
+            <nav class="nav">
                 <ul>
                 <!-- profil image -->
                     <?php if ($_SESSION['status'] == 'professeur'): ?> 
@@ -79,7 +79,7 @@
             </nav>
 
     <?php else:?>
-            <nav>
+            <nav class="nav">
                 <ul>
                     <?php if ($_SESSION['status'] == 'professeur'): ?> 
                         <li id="logo"><?php echo '<img src="../../assets/images/professeur/'. $_SESSION['image'].'"  height=58 width=58  >';?></li>

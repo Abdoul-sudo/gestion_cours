@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Envoyer un message</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="../../assets/css/insert.css">
 </head>
 <body>
 	<form action="../../controllers/messageComputing.php" method="POST">	

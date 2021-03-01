@@ -1,8 +1,5 @@
 body{
     font-family: 'Source code pro', Calibri, serif;
-    /* font-family: Impact, fantasy; */
-    /* margin: 0px;
-    padding: 0px; */
     background-image: url("../images/space/2.jpg") ;
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,20 +7,19 @@ body{
 }
 
 #nav{
-    height: 100%;
-    width: 160px;
+    height: 60%;
+    width: 20%;
     position: fixed;
     z-index: 1;
-    top: 10;
+    top: 17em;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
     padding-top: 20px;
-    opacity: 0.95;
     font-size: 0.65em;
     list-style: none;
     position: absolute;
-    /* background-color: #424558; */
+    opacity: 0.85;
 }
 nav{
     display: block;
@@ -35,7 +31,9 @@ nav{
     padding: 0px;
 }  */
 #nav button {
-    margin: 8px 8px;
+    display: block;
+    width: 100%;
+    margin: 8px 0px;
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     border: none;
@@ -50,12 +48,14 @@ nav{
     color: aqua;
     shadow: aquamarine;
     cursor: pointer;
+    background-color: #ddd;
     transform: scale(1.01);
+    transition: 0.3s ease-in;
 }
 
   
 
-nav > ul::after{
+/*nav > ul::after{
     content: "";
     display: block;
     clear: both;
@@ -64,7 +64,7 @@ nav > ul::after{
 nav > ul > li{
     float: none;
     position: relative;
-}
+}*/
 
 nav li{
     list-style-type: none; 

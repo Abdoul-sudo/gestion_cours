@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Envoyer un message</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="../../assets/css/insert.css">
 </head>
 <body>
 	<form action="../../controllers/messageComputing.php" method="POST">	
@@ -23,7 +23,7 @@
 				{
 				?>
 				<input type="checkbox" id=<?='email_'.$i?> name="recipient[]" value=<?=$val['id_etudiant']?>>
-				<label for=<?='email_'.$i?>><?=ucfirst($val['prenom_etudiant'])?></label><br>           
+				<label for=<?='email_'.$i?>><?=ucfirst($val['prenom_etudiant'])?></label><br>   
 				<?php
 				}
 				$i++;

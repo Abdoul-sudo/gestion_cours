@@ -7,11 +7,15 @@ body{
     font-weight: bold;
     text-align: center;
 }
+section{
+    margin-top: 5em;
+}
 .message{
     background: #040c22;
     opacity: 0.9;
     width: 400px;
     border-radius: 10px;
+    margin: auto;
 }
 .btn{
     border: none;
@@ -27,8 +31,9 @@ body{
     cursor: pointer;
     color: aqua;
     border-color: yellow;
+/*    transform: scale(5%, 5%);*/
     width: 120px;
-    height: 30px;
+    transition: 0.3s ease-in;
 }
 .div form{
     display: inline-block;

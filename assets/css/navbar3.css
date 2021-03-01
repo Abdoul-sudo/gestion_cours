@@ -7,8 +7,12 @@ body{
 }
 
 .nav{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
     width: 100%;
     background-color: #424558;
+    transition: 0.3s ease-in;
 }
 
 .nav > ul{
@@ -31,7 +35,7 @@ body{
     padding: 20px 30px;
     color: #fff;
 }
-.nav >ul > li > span{     /* span */
+.nav >ul>li>span{     /* span */
     padding: 20px 30px;
     color: #fff;
 }
@@ -39,9 +43,11 @@ body{
 /* permet de garder la taille du menu, sans qu'elle ne bouge */
 .nav > ul > li:hover a{
     padding: 15px 30px 20px 30px;
+    transition: 0.3s ease-in;   
 }
 .nav > ul > li:hover span{
     padding: 15px 30px 20px 30px;
+    transition: 0.3s ease-in;
 }
 .nav li{
     list-style-type: none;
@@ -68,6 +74,7 @@ body{
     left: 0px;
     padding: 0px;
     z-index: 1000;
+    transition: 0.3s ease-in;
 }
 
 .submenu li{
@@ -84,27 +91,33 @@ body{
 .menuAc:hover{
     border-top: 5px solid #bbb;
     background-color: RGBa(220, 220, 220, 0.15);
+    transition: 0.3s ease-in;
 }
 .menuIns:hover{
     border-top: 5px solid #0070bb;
     background-color: RGBa(000, 112, 192, 0.15);
+    transition: 0.3s ease-in;
 }
 .menuLi:hover{
     border-top: 5px solid #f1dc4f;
     background-color: RGBa(241, 211, 79, 0.15);
+    transition: 0.3s ease-in;
 }
 .menuPub:hover{
     border-top: 5px solid #35B554;
     background-color: RGBA(54,244,63,0.14);
+    transition: 0.3s ease-in;
 }
 .menuMess:hover{
     border-top: 5px solid #be2edd;
     background-color: RGBA(125,93,148,0.15);
+    transition: 0.3s ease-in;
 }
 .menuDec:hover{
     
     border-top: 5px solid #e44d26;
     background-color: RGBa(228, 77,38, 0.15);
+    transition: 0.3s ease-in;
 }
 
 /*submenu des menu */
@@ -128,21 +141,26 @@ body{
 .submenu li:hover a{
     color: #eee;
     font-weight: bold;
+    transition: 0.3s ease-in;
 }
 /* .menuAc .submenu li:hover{
     background-color: RGB(210, 77, 60);
 } */
 .menuIns .submenu li:hover{
     background-color: #192a56;
+    transition: 0.3s ease-in;
 }
 .menuLi .submenu li:hover{
     background-color: RGB(200, 165, 75);
+    transition: 0.3s ease-in;
 }
 .menuPub .submenu li:hover{
     background-color: RGB(53,106,84);
+    transition: 0.3s ease-in;
 }
 .menuMess .submenu li:hover{
     background-color: RGB(116,72,140);
+    transition: 0.3s ease-in;
 }
 
 #logo{

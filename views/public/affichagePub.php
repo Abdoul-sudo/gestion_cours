@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AffichagePublication</title>
+
+    <link rel="stylesheet" href="assets/css/list.css">
 </head>
 <body>
 
     <?php require("views/admin/menuAdmin.php");?>
     <h1> PUBLICATIONS </h1>
-    <table>
+    <table class="pub">
         <!-- <tr>
             <th>COURS</th>
             <th>PROFESSEUR</th>

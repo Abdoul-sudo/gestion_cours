@@ -1,0 +1,47 @@
+body{
+    color: white;
+    background-image: url("../images/space/12.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-weight: bold;
+    text-align: center;
+}
+.message{
+    background: #040c22;
+    opacity: 0.9;
+    width: 400px;
+    border-radius: 10px;
+}
+.btn{
+    border: none;
+    border: 2px solid aqua;
+    background: rgb(48, 44, 44);
+    opacity: 0.9;
+    border-radius: 1em;
+    color: yellow;
+    margin: 3px;
+    padding: 3px;
+}
+.btn:hover{
+    cursor: pointer;
+    color: aqua;
+    border-color: yellow;
+    width: 120px;
+    height: 30px;
+}
+.div form{
+    display: inline-block;
+    padding: 5px 1px;
+}
+.contenu{
+    margin: 1px 10px;
+    width: 370px;
+    height: 200px;
+    background: #33343b;
+    text-align: left;
+    opacity: 0.95;
+    padding-left: 2px;
+    border-radius: 4px;
+
+}

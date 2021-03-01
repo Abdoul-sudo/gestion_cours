@@ -13,10 +13,10 @@
     <?php require("sidebarMenuView.php")?>
 
     <h1 id="h1">
-    <?php
-        echo 'Bienvenue étudiant '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';    
+        <?php
+            echo 'Bienvenue étudiant '.$_SESSION['nom'].' '.$_SESSION['prenom'].'!!!  <br>';    
 
-    ?>
+        ?>
     </h1>
 </body>
 </html>

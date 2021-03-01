@@ -3,8 +3,11 @@ body{
     /* font-family: Impact, fantasy; */
     /* margin: 0px;
     padding: 0px; */
-    
- }
+    background-image: url("../images/space/2.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
 #nav{
     height: 100%;
@@ -19,6 +22,7 @@ body{
     opacity: 0.95;
     font-size: 0.65em;
     list-style: none;
+    position: absolute;
     /* background-color: #424558; */
 }
 nav{
@@ -97,5 +101,12 @@ nav li{
 
 #h1{
     text-align: center;
-    margin-top: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    color: white;
+    font-style: italic;
+    font-family: Brush Script MT;
+    font-size: 100px;
 }

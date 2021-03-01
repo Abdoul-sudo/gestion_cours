@@ -60,16 +60,16 @@
 
             foreach ($toutPub as $value) 
             {
-                echo "<div>";
+                echo '<div>';
                     echo "<tr>";
-                        echo '<th collspan="3">'.$value['nom_cours']."<th>";
+                        echo '<th collspan="4">Cours: '.$value['nom_cours']."<th>";
                     echo "</tr>";
                     echo "<tr>";
-                        echo '<td collspan="3">PROFESSEUR: '.$value['nom_professeur']."<td>";
+                        echo '<td collspan="3">Professeur: '.$value['nom_professeur']."<td>";
                     echo "</tr>";
                     echo "<tr>";
                         /*echo "<td>".$value['type_pub']."<td>";*/
-                        echo '<td collspan="2">'.$value['titre_pub']."<td>";
+                        echo '<td collspan="2">Objet: '.$value['titre_pub']."<td>";
                         echo "<td>".$value['date_pub']."<td>";
                     echo "</tr>";
                     echo "<tr>";

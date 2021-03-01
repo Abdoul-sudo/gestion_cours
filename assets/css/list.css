@@ -80,4 +80,7 @@ tr:hover{
     border: 1px groove yellow;
     /* padding: 8px 15px; */
 }
-
+.pub{
+    width: 300px;
+    transform: translate(-200%);
+}

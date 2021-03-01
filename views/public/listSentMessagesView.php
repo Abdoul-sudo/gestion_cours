@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Messages réçus</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="../../assets/css/receivedM.css">
 </head>
 <body>
 	<?php
@@ -26,21 +26,23 @@
 
 				<p class="contenu"><?=nl2br($data[$i]['content'])?></p>
 
-				<form action="../../controllers/messageComputing.php" method="GET">
-					<input type="hidden" name="action" value="1">
-					<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
-					<input type="submit" value="Modifier">
-				</form>
-				<form action="../../controllers/messageComputing.php" method="GET">
-					<input type="hidden" name="action" value="3">
-					<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
-					<input type="submit" value="Transferer">
-				</form>
-				<form action="../../controllers/messageComputing.php" method="GET">
-					<input type="hidden" name="action" value="2">
-					<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
-					<input type="submit" value="Supprimer">
-				</form>
+				<div class="div">
+					<form action="../../controllers/messageComputing.php" method="GET">
+						<input type="hidden" name="action" value="1">
+						<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
+						<input class="btn" type="submit" value="Modifier">
+					</form>
+					<form action="../../controllers/messageComputing.php" method="GET">
+						<input type="hidden" name="action" value="3">
+						<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
+						<input class="btn" type="submit" value="Transferer">
+					</form>
+					<form action="../../controllers/messageComputing.php" method="GET">
+						<input type="hidden" name="action" value="2">
+						<input type="hidden" name="id" value=<?= $data[$i]['mId']?>>
+						<input class="btn" type="submit" value="Supprimer">
+					</form>
+				</div>
 			</div>
 			<?php
 		}

@@ -21,11 +21,11 @@
                 {  ?>
                     <li >
                         <form class="menuAc" method="GET" action="admin.php">
-                        <input type="hidden" name="pgPublic" value="messProf">
-                        <input type="hidden" name="pg" value="showMprof">
-                        <button type="submit" name="pg2" value=<?=$courseTab[$i]['id_cours']?>>
-                            <?=ucwords($courseTab[$i]['cours'])?>
-                        </button>
+                            <input type="hidden" name="pgPublic" value="messProf">
+                            <input type="hidden" name="pg" value="showMprof">
+                            <button type="submit" name="pg2" value=<?=$courseTab[$i]['id_cours']?>>
+                                <?=ucwords($courseTab[$i]['cours'])?>
+                            </button>
                         </form>
                     </li>
                     <?php
@@ -40,11 +40,11 @@
                 {  ?>
                     <li>
                         <form method="GET" action="../../admin.php">
-                        <input type="hidden" name="pgPublic" value="messProf">
-                        <input type="hidden" name="pg" value="showMprof">
-                        <button type="submit" name="pg2" value=<?=$courseTab[$i]['id_cours']?>>
-                            <?=ucwords($courseTab[$i]['cours'])?>
-                        </button>
+                            <input type="hidden" name="pgPublic" value="messProf">
+                            <input type="hidden" name="pg" value="showMprof">
+                            <button type="submit" name="pg2" value=<?=$courseTab[$i]['id_cours']?>>
+                                <?=ucwords($courseTab[$i]['cours'])?>
+                            </button>
                         </form>
                     </li>
                     <?php

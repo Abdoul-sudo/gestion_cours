@@ -61,8 +61,8 @@
 			$db = $this->dbConnect();
 			$q = $db->prepare('
 				SELECT m.id_mess mId, m.contenu_mess content, DATE_FORMAT(m.date_mess, \'%d/%m/%Y %H:%i\') mDate,
-				m.id_etudiant idExp, e.prenom_etudiant prenomExp,
-				e.nom_etudiant nomExp, e.email_etudiant emailExp
+				m.id_etudiant idExp, e.prenom_etudiant prenomExp, e.nom_etudiant nomExp,
+				e.email_etudiant emailExp
 				FROM message m
 				INNER JOIN recevoir r
 				INNER JOIN etudiant e
@@ -71,7 +71,7 @@
 			');
 			$q->execute(array(intval($id)));
 			$data = $q->fetch(PDO::FETCH_ASSOC);
-			return $data;
+			return $data;	
 		}
 		//récupération des messages envoyés
 		public function getSentMessages($id)
@@ -114,14 +114,17 @@
 		public function updateMessage(Message $message)
 		{
 			$db = $this->dbConnect();
-			$q = $db->prepare('
-				UPDATE message
-				SET contenu_mess = :contenu_mess, date_mess = NOW()
-				WHERE id_mess = :id_mess
-				');
-			// $q->bindValue(':contenu_mess', $message->content());
-			// $q->bindValue(':id_mess', intval($message->id()));
-			$q->execute(array('contenu_mess'=>$message->content(), 'id_mess'=>intval($message->id())));
+			// $tab = $message->recipient();
+			// for($i=0; $i<count($tab); $i++){
+				$q = $db->prepare('
+					UPDATE message
+					SET contenu_mess = :contenu_mess, date_mess = NOW()
+					WHERE id_mess = :id_mess
+					');
+				// $q->bindValue(':contenu_mess', $message->content());
+				// $q->bindValue(':id_mess', intval($message->id()));
+				$q->execute(array('contenu_mess'=>$message->content(), 'id_mess'=>intval($message->id())));
+			//}
 		}
 		//suppression d'un message
 		public function deleteMessage(Message $message)

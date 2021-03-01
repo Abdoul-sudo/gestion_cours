@@ -36,6 +36,7 @@
 		}
 		elseif (isset($_POST['update']) && $_POST['update']==1){
 			$message = new Message;
+			$message->setId(intval($_POST['id']));
 			$message->setContent($_POST['message']);
 			$message->setRecipient($_POST['recipient']);
 			$readyMessage = new MessageManager;

@@ -9,10 +9,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Envoyer un message</title>
 	<link rel="stylesheet" href="../../assets/css/insert.css">
+	
 </head>
 <body>
 	<?php require_once("menuPublic.php");?>
-	<?php include("sidebarMenuView.php")?>
 	<form class="box" action="../../controllers/messageComputing.php" method="POST">	
 		<h4>Selectionnez le(s) destinataire(s):</h4>
 		<div class="div">

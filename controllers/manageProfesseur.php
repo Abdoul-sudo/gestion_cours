@@ -13,7 +13,6 @@
                 $mdpProf = $_POST['mdp'];
                 $telProf = $_POST['tel'];
                 $imgProf = $_POST['img'];
-
                 $professeur = new User;
                 $ajoutProf = $professeur -> insertUser('professeur', $nomProf, $prenomProf, $telProf, $emailProf, $mdpProf, $imgProf);
                 //header("location:../admin.php?session=admin");

@@ -100,6 +100,7 @@ select option{
     padding-left: 15px;
     text-align: left;
     position: relative;
+    background: #1b192b;
 }
 
 .box label, .box input[type = "checkbox"]{

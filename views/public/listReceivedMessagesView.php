@@ -14,6 +14,7 @@
 <body>
 	<?php
 		require_once("menuPublic.php");
+		
 	?>
 	<section class="container">
 		<?php

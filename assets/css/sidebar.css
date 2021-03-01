@@ -46,9 +46,9 @@ nav{
     /* border-left: 5px solid #bbb;
     background-color: RGBa(220, 220, 220, 0.15); */
     color: aqua;
-    shadow: aquamarine;
+    box-shadow: aquamarine;
     cursor: pointer;
-    background-color: #ddd;
+    background-color: rgb(252, 111, 30);
     transform: scale(1.01);
     transition: 0.3s ease-in;
 }

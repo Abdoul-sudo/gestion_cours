@@ -16,6 +16,7 @@
 	<form action="../../controllers/messageComputing.php" method="POST">	
 		<p><strong>Selectionnez le(s) destinataire(s):</strong></p>
 		<?php 
+			include("sidebarMenuView.php");
 			$studentTab = listPotentialRecipients();
 			$i = 1;
 			foreach ($studentTab as $val){

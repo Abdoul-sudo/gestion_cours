@@ -9,10 +9,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Messages réçus</title>
 	<link rel="stylesheet" href="../../assets/css/receivedM.css">
+	<link rel="stylesheet" href="../../assets/sidebar.css">
 </head>
 <body>
 	<?php
 		require_once("menuPublic.php");
+		require("sidebarMenuView.php");
 	?>
 	<section class="container">
 		<?php

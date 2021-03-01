@@ -12,7 +12,7 @@
 </head>
 <body>
 	<?php require_once("menuPublic.php");?>
-	<?php include("sidebarMenuView.php")?>
+	<?php include("sidebarMenuView.php");?>
 	<form class="box" action="../../controllers/messageComputing.php" method="POST">	
 		<h4>Selectionnez le(s) destinataire(s):</h4>
 		<div class="div">

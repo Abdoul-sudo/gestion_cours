@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="assets/css/login.css">
     </head>
     <body>
-        <button type="submit">Salut</button>
         <div id="container">          
             <form class="box" action="controllers/verification.php" method="POST">
                 <h1>Login</h1>              

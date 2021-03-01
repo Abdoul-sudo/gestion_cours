@@ -11,8 +11,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Envoyer un message</title>
 	<link rel="stylesheet" href="../../assets/css/insert.css">
+    <link rel="stylesheet" href="../../assets/css/sidebar.css">
 </head>
 <body>
+	<?php include("sidebarMenuView.php"); ?>
 	<form action="../../controllers/messageComputing.php" method="POST">	
 		<p><strong>Selectionnez le(s) destinataire(s):</strong></p>
 		<?php 
